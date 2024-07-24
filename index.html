@@ -8,18 +8,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
         .nav-wrapper {
-            background-color: #2196f3;
-            padding-right: 20px; /* Espacio a la derecha */
+            background-color: #333;
+            padding-right: 20px;
+            color: beige;
+            
+        }
+        .header{
+            top: 0;
+            position: fixed; 
+            width: 100%;
+            top: 0;
+            z-index: 1000; 
+            color: beige;
         }
         .brand-logo {
             margin-left: 10px;
+            color: beige;
+        }
+        .background {
+            background-image: url('./drawable/images/croquetas.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: beige;
+            text-align: center;
+            padding: 20px;
+            position: relative;
         }
         .nav-wrapper .container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
-            max-width: calc(100% - 40px); /* Asegura que haya margen en pantallas grandes */
+            max-width: calc(100% - 40px);
         }
         .nav-wrapper ul {
             display: flex;
@@ -38,10 +62,223 @@
                 width: 250px;
             }
         }
+        .fullscreen-bg {
+            background-size: cover;
+            height: 100vh;
+            position: relative;
+        }
+        .content {
+            background-color: #333;
+        }
+        .top-ventas-title {
+            font-weight: bold;
+            color: beige;
+            text-align: center;
+        }
+        .top-alquiler-title {
+            font-weight: bold;
+            color: beige;
+            text-align: center;
+            margin-top: -2rem;
+        }
+        .carousel .carousel-item {
+            width: 400px;
+        }
+        .carousel-item {
+            position: relative;
+            height: 300px; /* Ajusta la altura según tus necesidades */
+        }
+        .carousel-item-content {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .carousel-item-image {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+        }
+        .carousel-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.719)90%, rgba(255, 255, 255, 0) 100%);
+            z-index: 1;
+        }
+        .carousel-item-info {
+            position: absolute;
+            left: 0;
+            right: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: left; /* Alinea el texto a la izquierda */
+            z-index: 2; /* Asegúrate de que el texto esté por encima del filtro */
+        }
+        .carousel-item-info h6 {
+            margin: 0;
+            font-size: 1rem; /* Ajusta el tamaño de la fuente según tu preferencia */
+        }
+        .carousel {
+            margin-top: -5rem;
+        }
+        .card-image img {
+            height: 200px;
+        }
+        .card-content {
+            display: flex;
+            align-items: center;
+        }
+        .card-content img {
+            margin-right: 15px;
+        }
+        .card-image {
+            width: 100%;
+        }
+        body {
+            background-color: #333;
+        }
+        .texto-bienvenida{
+            color: beige;
+            text-align: center;
+            margin-top: -7rem;
+        }
+        .texto-bienvenida h1 {
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.589); /* Sombra del texto */
+        }
+        
+        .texto-bienvenida p {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.671); /* Sombra del texto */
+        }
+        .detalles{
+            padding: 2px;
+        }
+
+        .top-alquiler-title {
+    font-weight: bold;
+    color: beige;
+    text-align: center;
+   /* Añade un margen superior para separar del carrusel */
+}
+
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea una cuadrícula de 2 columnas */
+    gap: 20px; /* Espacio entre los elementos de la cuadrícula */
+    margin-bottom: 2rem;
+}
+
+.noticia {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre la imagen y el texto */
+    background-color: #444;
+    padding: 15px;
+    border-radius: 5px;
+    height: 100%; /* Asegura que cada tarjeta ocupe toda la altura disponible */
+}
+
+.noticia img {
+    width: 150px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: 100px; /* Ajusta la altura de la imagen según tus necesidades */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.noticia-texto {
+    color: beige;
+}
+
+.noticia-texto h5 {
+    margin: 0;
+    font-size: 1.2rem; /* Ajusta el tamaño del título */
+}
+
+.noticia-texto p {
+    margin: 5px 0 0;
+    font-size: 1rem; /* Ajusta el tamaño de la descripción */
+}
+.page-footer {
+    background-color: #222;
+    color: beige;
+    padding: 40px 0;
+}
+
+.page-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-footer h5 {
+    margin-bottom: 20px;
+}
+
+.page-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.page-footer ul li {
+    margin-bottom: 10px;
+}
+
+.page-footer ul a {
+    color: beige;
+    text-decoration: none;
+}
+
+.page-footer ul a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    background-color: #111;
+    padding: 10px 0;
+    text-align: center;
+}
+@media only screen and (max-width: 1200px) {
+            .noticias-grid {
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+            }
+            .noticia {
+                flex-direction: column; /* Asegura que la imagen esté arriba y el texto debajo en pantallas pequeñas */
+            }
+        }
+        /* Estilos para la flecha */
+        .scroll-down {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            font-size: 2rem;
+            color: beige;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 <body>
-    <nav>
+    <nav class="header">
         <div class="nav-wrapper">
             <a href="index.html" class="brand-logo">G€striCredits</a>
             <a href="#" data-target="mobile-menu" class="sidenav-trigger">
@@ -49,11 +286,11 @@
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="venta.html">Venta</a></li>
-                <li><a href="alquilar.html">Alquilar</a></li>
-                <li><a href="promociones.html">Promociones</a></li>
-                <li><a href="empresa.html">Empresa</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="./pages/venta.html">Venta</a></li>
+                <li><a href="./pages/alquilar.html">Alquilar</a></li>
+                <li><a href="./pages/promociones.html">Promociones</a></li>
+                <li><a href="./pages/">Empresa</a></li>
+                <li><a href="./pages/">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -62,23 +299,304 @@
     <ul id="mobile-menu" class="sidenav">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="venta.html">Venta</a></li>
-        <li><a href="alquilar.html">Alquilar</a></li>
+        <li><a href="./pages/alquilar.html">Alquilar</a></li>
         <li><a href="promociones.html">Promociones</a></li>
         <li><a href="empresa.html">Empresa</a></li>
         <li><a href="contacto.html">Contacto</a></li>
     </ul>
 
-    <div class="container" id="inicio">
-        <h1>Bienvenidos a nuestra Inmobiliaria</h1>
-        <p>Encuentra las mejores propiedades con nosotros.</p>
+    <div class="background">
+        <div class="texto-bienvenida">
+            <h1>Bienvenidos a nuestra Inmobiliaria</h1>
+            <p>Encuentra las mejores propiedades con nosotros.</p>
+        </div>
+        <div class="scroll-down" onclick="scrollDown()">
+            <i class="material-icons">arrow_downward</i>
+        </div>
+    </div>
+
+    <div class="container content">
+        <h2 class="top-ventas-title">Top Ventas</h2>
+        <div class="carousel">
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!--para otros ítems del carrusel -->
+        </div>
+    </div>
+
+    <div class="container content">
+        <h2 class="top-alquiler-title">Top Alquiler</h2>
+        <div class="carousel">
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>                           
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="carousel-item" href="#one!">
+                <div class="carousel-item-content">
+                    <div class="carousel-item-image" style="background-image: url('./drawable/images/croquetas.jpg');"></div>
+                    <div class="carousel-item-overlay">
+                        <div class="carousel-item-info">
+                            <h6 class="detalles">Precio:</h6>
+                            <h6 class="detalles">Localización:</h6>
+                            <h6 class="detalles">Detalles:</h6>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            
+            <!-- Repite para otros ítems del carrusel -->
+        </div>
+
+        <div class="container content">
+            <h2 class="top-alquiler-title">Últimas Noticias</h2>
+            <div class="noticias-grid">
+                <div class="noticia">
+                    <img src="./drawable/images/croquetas.jpg" alt="Noticia 1">
+                    <div class="noticia-texto">
+                        <h5>Título de la Noticia 1</h5>
+                        <p>Descripción breve de la noticia 1. Esta es una descripción corta que explica el contenido de la noticia.</p>
+                    </div>
+                </div>
+                <div class="noticia">
+                    <img src="./drawable/images/croquetas.jpg" alt="Noticia 2">
+                    <div class="noticia-texto">
+                        <h5>Título de la Noticia 2</h5>
+                        <p>Descripción breve de la noticia 2. Esta es una descripción corta que explica el contenido de la noticia.</p>
+                    </div>
+                </div>
+                <div class="noticia">
+                    <img src="./drawable/images/croquetas.jpg" alt="Noticia 3">
+                    <div class="noticia-texto">
+                        <h5>Título de la Noticia 3</h5>
+                        <p>Descripción breve de la noticia 3. Esta es una descripción corta que explica el contenido de la noticia.</p>
+                    </div>
+                </div>
+                <div class="noticia">
+                    <img src="./drawable/images/croquetas.jpg" alt="Noticia 4">
+                    <div class="noticia-texto">
+                        <h5>Título de la Noticia 4</h5>
+                        <p>Descripción breve de la noticia 4. Esta es una descripción corta que explica el contenido de la noticia.</p>
+                    </div>
+                </div>
+                <div class="noticia">
+                    <img src="./drawable/images/croquetas.jpg" alt="Noticia 4">
+                    <div class="noticia-texto">
+                        <h5>Título de la Noticia 4</h5>
+                        <p>Descripción breve de la noticia 4. Esta es una descripción corta que explica el contenido de la noticia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pie de página -->
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <!-- Números de teléfono -->
+            <div class="col s12 m4">
+                <h5 class="white-text">Contactos</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="tel:+1234567890">Teléfono: ...</a></li>
+                    <li><a class="grey-text text-lighten-3" href="tel:+0987654321">Teléfono: ...</a></li>
+                </ul>
+            </div>
+            <!-- Direcciones de correo electrónico -->
+            <div class="col s12 m4">
+                <h5 class="white-text">Correos Electrónicos</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                    <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                </ul>
+            </div>
+            <!-- Dirección física -->
+            <div class="col s12 m4">
+                <h5 class="white-text">Dirección</h5>
+                <p class="grey-text text-lighten-3">29190, Calle ..., Ciudad, España</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2024 G€striCredits. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
+        
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems, {});
+            // Inicializa el menú de navegación móvil
+            var elemsSidenav = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elemsSidenav, {});
+            
+            // Inicializa los carruseles
+            var elemsCarousel = document.querySelectorAll('.carousel');
+            var carousels = M.Carousel.init(elemsCarousel, {
+                duration: 200,
+                dist: -80,
+                shift: 5,
+                padding: 5,
+                numVisible: 6,
+                indicators: false
+            });
+            
+            
+            setInterval(function() {
+                carousels.forEach(function(instance) {
+                    instance.next();
+                });
+            }, 3500); 
         });
+    
+        function scrollDown() {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        }
     </script>
+    
 </body>
 </html>
