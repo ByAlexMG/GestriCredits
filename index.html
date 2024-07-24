@@ -3,32 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inmobiliaria - Inicio</title>
+    <title>G€striCredits</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
         .nav-wrapper {
             background-color: #2196f3;
+            padding-right: 20px; /* Espacio a la derecha */
         }
         .brand-logo {
             margin-left: 10px;
         }
-        .container {
-            margin-top: 20px;
+        .nav-wrapper .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            max-width: calc(100% - 40px); /* Asegura que haya margen en pantallas grandes */
+        }
+        .nav-wrapper ul {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-wrapper ul li {
+            margin: 0 15px;
+        }
+        @media only screen and (max-width: 992px) {
+            .nav-wrapper ul {
+                display: none;
+            }
+            .sidenav {
+                width: 250px;
+            }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="index.html" class="brand-logo">Inmobiliaria</a>
+            <a href="index.html" class="brand-logo">G€striCredits</a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="propiedades.html">Propiedades</a></li>
+                <li><a href="venta.html">Venta</a></li>
+                <li><a href="alquilar.html">Alquilar</a></li>
+                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
     </nav>
+
+    <!-- Sidenav -->
+    <ul id="mobile-menu" class="sidenav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="venta.html">Venta</a></li>
+        <li><a href="alquilar.html">Alquilar</a></li>
+        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="empresa.html">Empresa</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
 
     <div class="container" id="inicio">
         <h1>Bienvenidos a nuestra Inmobiliaria</h1>
@@ -36,5 +74,11 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems, {});
+        });
+    </script>
 </body>
 </html>
