@@ -152,7 +152,7 @@ public class HTMLUpdaterWithImageGUI {
     public void updateHTML(String location, String price, String description, String imagePath, String title, String modalTitle, String modalContent) {
         String filePath = "pages\\venta.html"; // Reemplaza con la ruta real del archivo HTML
         StringBuilder htmlContent = new StringBuilder();
-
+    
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -162,7 +162,7 @@ public class HTMLUpdaterWithImageGUI {
             e.printStackTrace();
             return;
         }
-
+    
         // HTML para la nueva propiedad
         String newPropertyHTML =
             "<div class='col s12 m6 card-item' data-ubicacion='" + location + "' data-precio='" + price + "'>\n" +
@@ -178,44 +178,52 @@ public class HTMLUpdaterWithImageGUI {
             "        </div>\n" +
             "    </div>\n" +
             "</div>\n";
-
-        // HTML para el nuevo modal
+    
+        // HTML para el nuevo modal con carrusel
         String newModalHTML =
             "<div id='modal" + nextId + "' class='modal'>\n" +
             "    <div class='modal-content'>\n" +
             "        <h4>" + modalTitle + "</h4>\n" +
-            "        <p>" + modalContent + "</p>\n" +
+            "        <div class='carousel carousel-slider'>\n" +
+            "            <a class='carousel-item' href='#one!'><img src='" + imagePath + "' alt='Imagen 1'></a>\n" +
+            "            <a class='carousel-item' href='#two!'><img src='" + imagePath + "' alt='Imagen 2'></a>\n" +
+            "            <a class='carousel-item' href='#three!'><img src='" + imagePath + "' alt='Imagen 3'></a>\n" +
+            "        </div>\n" +
+            "        <p>Ubicaci&oacuten: " + location + "</p>\n" +
+            "        <p>Precio: " + price + "&euro;</p>\n" +
+            "        <p>Descripci&oacuten: " + modalContent + "</p>\n" +
             "    </div>\n" +
             "    <div class='modal-footer'>\n" +
             "        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>\n" +
             "    </div>\n" +
             "</div>\n";
-
+    
         int insertIndex = htmlContent.indexOf("<!-- INSERTAR AQUI -->");
         if (insertIndex == -1) {
             System.out.println("Marcador de posición no encontrado en el archivo HTML.");
             return;
         }
-
+    
         htmlContent.insert(insertIndex, newPropertyHTML);
-
+    
         int modalInsertIndex = htmlContent.indexOf("<!-- INSERTAR MODALES AQUI -->");
         if (modalInsertIndex == -1) {
             System.out.println("Marcador de posición para modales no encontrado en el archivo HTML.");
             return;
         }
-
+    
         htmlContent.insert(modalInsertIndex, newModalHTML);
-
+    
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write(htmlContent.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+    
         nextId++; // Incrementa el ID después de la actualización
         saveNextId(); // Guarda el nuevo valor de nextId
     }
+    
 
     private void loadNextId() {
         File file = new File("nextId.txt");
