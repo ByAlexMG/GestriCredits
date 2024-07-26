@@ -133,6 +133,7 @@
         .card {
             background-color: #fff;
             color: #333;
+            height: auto; /* Ajustar la altura según sea necesario */
             margin-bottom: 20px;
         }
         .card .card-image img {
@@ -141,7 +142,8 @@
         }
         .card .card-image {
             width: 150px; /* Ancho fijo para la imagen */
-            height: auto; /* Ajusta la altura automáticamente */
+            height: 200px; /* Ajusta la altura automáticamente */
+            display: flex;
         }
         .card-action {
             text-align: right;
@@ -291,8 +293,59 @@
                     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
                 </div>
             </div>
-
+            <div class="col s12 m6">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="../drawable/images/croquetas.jpg" alt="Imagen 3">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h5>Título del Anuncio 3</h5>
+                            <p>Descripción breve del anuncio. Información relevante y atractiva para captar la atención de los usuarios.</p>
+                        </div>
+                        <div class="card-action">
+                            <a class="modal-trigger" href="#modal3">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <h4>Título del Anuncio 3</h4>
+                    <p>Información detallada sobre el anuncio. Aquí se proporciona una descripción más extensa y completa para que los usuarios puedan obtener todos los detalles necesarios.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+            </div>
+            
             <!-- INSERTAR AQUI -->
+<div class="col s12 m6">
+    <div class="card horizontal">
+        <div class="card-image">
+            <img src="../drawable/images/croquetas.jpg" alt="ccc">
+        </div>
+        <div class="card-stacked">
+            <div class="card-content">
+                <h5>ccc</h5>
+                <p>ccc</p>
+            </div>
+            <div class="card-action">
+                <a class="modal-trigger" href="#modal98307">Leer m�s</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal98307" class="modal">
+    <div class="modal-content">
+        <h4>ccc</h4>
+        <p>ccc</p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
+</div>
 
             
         </div>
