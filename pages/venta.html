@@ -72,10 +72,12 @@
         }
         .carousel .carousel-item img {
             width: 100%;
-            height: auto;
+    height: 100%; /* Asegura que la imagen cubra todo el contenedor */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
         }
         .carousel.carousel-slider {
             height: 300px; /* Ajustar la altura según sea necesario */
+            overflow: hidden; /* Oculta cualquier contenido que sobresalga */
         }
         .carousel-fixed-item {
             display: none;
@@ -163,6 +165,13 @@
             cursor: pointer;
             z-index: 1000;
         }
+   
+
+.carousel .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
     </style>
 </head>
 <body>
@@ -194,7 +203,7 @@
     </ul>
     <div class="contenido">
     <div class="container" id="propiedades">
-        <h1>Propiedades en Alquiler</h1>
+        <h1>Propiedades en Venta</h1>
         
         <!-- Formulario de búsqueda -->
         <div class="search-form">
@@ -296,32 +305,6 @@
                 </div>
             </div>
 
-            <div class='col s12 m6 card-item' data-ubicacion='qwe' data-precio='qwe'>
-    <div class='card' onclick='openModal(6)'>
-        <div class='card-image'>
-            <img src='../drawable/images/croquetas.jpg' alt='Imagen de la Propiedad'>
-            <span class='card-title' id="nombre">qweee</span>
-        </div>
-        <div class='card-content'>
-            <p>Ubicaci&oacuten: qwe</p>
-            <p>Precio: qwe&euro;</p>
-            <p>Descripci&oacuten: qwe</p>
-        </div>
-    </div>
-</div>
-<div class='col s12 m6 card-item' data-ubicacion='qwe' data-precio='qwe'>
-    <div class='card' onclick='openModal(7)'>
-        <div class='card-image'>
-            <img src='../drawable/images/croquetas.jpg' alt='Imagen de la Propiedad'>
-            <span class='card-title' id="nombre">qwe</span>
-        </div>
-        <div class='card-content'>
-            <p>Ubicaci&oacuten: qwe</p>
-            <p>Precio: qwe&euro;</p>
-            <p>Descripci&oacuten: qwe</p>
-        </div>
-    </div>
-</div>
 <!-- INSERTAR AQUI -->
 
 
@@ -334,9 +317,9 @@
         <div class="modal-content">
             <h4>Propiedad 1</h4>
             <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 1"></a>
-                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 2"></a>
-                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 3"></a>
+                <a class="carousel-item" href="#one!"><img src="../drawable/images/croquetas2.jpg" alt="Image 1"></a>
+                <a class="carousel-item" href="#two!"><img src="../drawable/images/croquetas2.jpg" alt="Image 2"></a>
+                <a class="carousel-item" href="#three!"><img src="../drawable/images/croquetas2.jpg" alt="Image 3"></a>
             </div>
             <p>Ubicación: Madrid</p>
             <p>Precio: 300,000€</p>
@@ -354,7 +337,7 @@
             <h4>Propiedad 2</h4>
             <div class="carousel carousel-slider">
                 <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
+                <a class="carousel-item" href="#two!"><img src="../drawable/images/croquetas2.jpg" alt="Image 2"></a>
                 <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
             </div>
             <p>Ubicación: Barcelona</p>
@@ -455,12 +438,84 @@
         <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
     </div>
 </div>
+<div id='modal8' class='modal'>
+    <div class='modal-content'>
+        <h4>eqwewq</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#img1'><img src='croquetas.jpg' alt='Imagen 1'></a>
+        </div>
+        <p>Ubicaci�n: wwww</p>
+        <p>Precio: wwww&euro;</p>
+        <p>Descripci�n: qweqwe</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
+<div id='modal9' class='modal'>
+    <div class='modal-content'>
+        <h4>eeeee</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas.jpg' alt='Imagen 1'></a>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas2.jpg' alt='Imagen 2'></a>
+        </div>
+        <p>Ubicaci�n: eeee</p>
+        <p>Precio: 2&euro;</p>
+        <p>Descripci�n: eeeeeeee</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
+<div id='modal10' class='modal'>
+    <div class='modal-content'>
+        <h4>eeeee</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas2.jpg' alt='Imagen 1'></a>
+        </div>
+        <p>Ubicaci�n: eeee</p>
+        <p>Precio: 2&euro;</p>
+        <p>Descripci�n: eeeeeeee</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
+<div id='modal11' class='modal'>
+    <div class='modal-content'>
+        <h4>ttttt</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas2.jpg' alt='Imagen 1'></a>
+        </div>
+        <p>Ubicaci�n: tttt</p>
+        <p>Precio: tttt&euro;</p>
+        <p>Descripci�n: tttt</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
+<div id='modal12' class='modal'>
+    <div class='modal-content'>
+        <h4>ttttt</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas.jpg' alt='Imagen 1'></a>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas2.jpg' alt='Imagen 2'></a>
+        </div>
+        <p>Ubicaci�n: tttt</p>
+        <p>Precio: tttt&euro;</p>
+        <p>Descripci�n: tttt</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
 <!-- INSERTAR MODALES AQUI -->
 
 
-    <a href="https://wa.me/661681898?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20que%20me%20informase%20sobre%20sus%20servicios." class="whatsapp-button" target="_blank">
-        <i class="material-icons">chat</i>
-    </a>
+<a href="https://wa.me/661681898?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20que%20me%20informase%20sobre%20sus%20servicios." class="whatsapp-button" target="_blank">
+    <i class="material-icons">chat</i>
+</a>
             <!-- Pie de página -->
 <footer class="page-footer">
     <div class="container">
