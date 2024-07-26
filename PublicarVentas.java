@@ -7,17 +7,17 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HTMLUpdaterWithImageGUI {
+public class PublicarVentas {
 
     private String propertyImagePath;
     private String propertyImageFileName; // Mover aquí
     private List<String> modalImagePaths = new ArrayList<>();
     private int nextId = 1; // Para manejar el ID de la propiedad
 
-    public HTMLUpdaterWithImageGUI() {
+    public PublicarVentas() {
         loadNextId(); // Cargar el ID al iniciar
 
-        JFrame frame = new JFrame("Actualizador de HTML con Imágenes");
+        JFrame frame = new JFrame("Publicador de Ventas");
         frame.setSize(600, 900);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
@@ -183,7 +183,7 @@ public class HTMLUpdaterWithImageGUI {
                         }
                     }
                     updateHTML(location, price, description, "../drawable/images/" + propertyImageFileName, modalImageFileNames, title, modalTitle, modalContent);
-                    JOptionPane.showMessageDialog(frame, "Archivo HTML actualizado.");
+                    JOptionPane.showMessageDialog(frame, "Propiedad Publicada.");
                 } else {
                     JOptionPane.showMessageDialog(frame, "Selecciona al menos una imagen para el modal.");
                 }
@@ -310,6 +310,6 @@ public class HTMLUpdaterWithImageGUI {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new HTMLUpdaterWithImageGUI());
+        SwingUtilities.invokeLater(() -> new PublicarVentas());
     }
 }
