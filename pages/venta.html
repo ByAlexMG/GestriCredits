@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
+        body {
+            background-color: #333; /* Color de fondo añadido */
+        }
         .nav-wrapper {
-            background-color: #2196f3;
+            background-color: #333;
             padding-right: 20px; /* Espacio a la derecha */
         }
         .brand-logo {
@@ -40,6 +43,7 @@
         }
         .container {
             margin-top: 20px;
+            color: #fff; /* Asegura que el texto sea visible sobre el fondo oscuro */
         }
         .card-image img {
             height: 200px;
@@ -51,7 +55,6 @@
             cursor: pointer;
         }
         .card {
-           
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .modal-content {
@@ -71,7 +74,6 @@
             margin-bottom: 30px;
         }
         .card-title {
-            
             font-weight: 700; /* Ajusta el grosor del texto aquí */
         }
         #nombre{
@@ -91,6 +93,49 @@
             background-color: red;
             color: white;
         }
+        .card-content{
+            color: black;
+        }
+        
+.page-footer {
+    background-color: #222;
+    color: beige;
+    padding: 40px 0;
+}
+
+.page-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-footer h5 {
+    margin-bottom: 20px;
+}
+
+.page-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.page-footer ul li {
+    margin-bottom: 10px;
+}
+
+.page-footer ul a {
+    color: beige;
+    text-decoration: none;
+}
+
+.page-footer ul a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    background-color: #111;
+    padding: 10px 0;
+    text-align: center;
+}
     </style>
 </head>
 <body>
@@ -181,6 +226,48 @@
                     </div>
                 </div>
             </div>
+            <!-- Propiedad 3 -->
+            <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
+                <div class="card" onclick="openModal(2)">
+                    <div class="card-image">
+                        <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
+                        <span class="card-title" id="nombre">Propiedad 2</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Ubicación: Barcelona</p>
+                        <p>Precio: 450,000€</p>
+                        <p>Descripción: Amplio piso con vistas al mar.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Propiedad 4 -->
+            <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
+                <div class="card" onclick="openModal(2)">
+                    <div class="card-image">
+                        <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
+                        <span class="card-title" id="nombre">Propiedad 2</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Ubicación: Barcelona</p>
+                        <p>Precio: 450,000€</p>
+                        <p>Descripción: Amplio piso con vistas al mar.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Propiedad 5 -->
+            <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
+                <div class="card" onclick="openModal(2)">
+                    <div class="card-image">
+                        <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
+                        <span class="card-title" id="nombre">Propiedad 2</span>
+                    </div>
+                    <div class="card-content">
+                        <p>Ubicación: Barcelona</p>
+                        <p>Precio: 450,000€</p>
+                        <p>Descripción: Amplio piso con vistas al mar.</p>
+                    </div>
+                </div>
+            </div>
             <!-- Añadir más propiedades aquí -->
         </div>
     </div>
@@ -223,6 +310,94 @@
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
         </div>
     </div>
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <h4>Propiedad 4</h4>
+            <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
+                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
+                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
+            </div>
+            <p>Ubicación: Barcelona</p>
+            <p>Precio: 450,000€</p>
+            <p>Descripción: Amplio piso con vistas al mar.</p>
+            <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
+            <p>Año de construcción: 2015</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        </div>
+    </div>
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <h4>Propiedad 4</h4>
+            <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
+                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
+                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
+            </div>
+            <p>Ubicación: Barcelona</p>
+            <p>Precio: 450,000€</p>
+            <p>Descripción: Amplio piso con vistas al mar.</p>
+            <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
+            <p>Año de construcción: 2015</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        </div>
+    </div>
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <h4>Propiedad 5</h4>
+            <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
+                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
+                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
+            </div>
+            <p>Ubicación: Barcelona</p>
+            <p>Precio: 450,000€</p>
+            <p>Descripción: Amplio piso con vistas al mar.</p>
+            <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
+            <p>Año de construcción: 2015</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        </div>
+    </div>
+            <!-- Pie de página -->
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <!-- Números de teléfono -->
+            <div class="col s12 m4">
+                <h5 class="white-text">Contactos</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="tel:+1234567890">Teléfono: ...</a></li>
+                    <li><a class="grey-text text-lighten-3" href="tel:+0987654321">Teléfono: ...</a></li>
+                </ul>
+            </div>
+            <!-- Direcciones de correo electrónico -->
+            <div class="col s12 m4">
+                <h5 class="white-text">Correos Electrónicos</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                    <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                </ul>
+            </div>
+            <!-- Dirección física -->
+            <div class="col s12 m4">
+                <h5 class="white-text">Dirección</h5>
+                <p class="grey-text text-lighten-3">29190, Calle ..., Ciudad, España</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2024 G€striCredits. Todos los derechos reservados.
+        </div>
+    </div>
+</footer>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>

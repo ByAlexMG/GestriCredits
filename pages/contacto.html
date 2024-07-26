@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
+        /* Fondo oscuro para toda la página */
+        body {
+            background-color: #333;
+            color: #fff; /* Color del texto en la página */
+            font-family: 'Roboto', sans-serif;
+        }
         .nav-wrapper {
             background-color: #2196f3;
             padding-right: 20px; /* Espacio a la derecha */
@@ -56,6 +62,26 @@
         .reset-button {
             background-color: red;
             color: white;
+        }
+        .contact-info {
+            margin-top: 30px;
+            background-color: #444; /* Fondo ligeramente más claro que el del body */
+            color: #fff; /* Texto blanco para contraste */
+            padding: 20px;
+            border-radius: 8px; /* Bordes redondeados para un diseño más suave */
+        }
+        .contact-info h2 {
+            margin-bottom: 20px;
+        }
+        .contact-info .info-item {
+            margin-bottom: 15px;
+        }
+        .contact-info .info-item h5 {
+            margin: 0;
+            color: #f5f5f5; /* Color de los subtítulos */
+        }
+        .contact-info .info-item p {
+            margin: 0;
         }
     </style>
 </head>
@@ -110,6 +136,30 @@
                 <i class="material-icons right">send</i>
             </button>
         </form>
+
+        <!-- Información de Contacto -->
+        <div class="contact-info">
+            <h2>Información de Contacto</h2>
+            <div class="info-item">
+                <h5>Teléfonos de Atención</h5>
+                <p>+34 999 999 999</p>
+                <p>+34 999 999 999</p>
+            </div>
+            <div class="info-item">
+                <h5>Dirección</h5>
+                <p>Calle Ficticia 123, Ciudad, País</p>
+            </div>
+            <div class="info-item">
+                <h5>Horarios de Atención</h5>
+                <p>Lunes a Viernes: 9:00 - 18:00</p>
+                <p>Sábado: 10:00 - 14:00</p>
+                <p>Domingo: Cerrado</p>
+            </div>
+            <div class="info-item">
+                <h5>Email de Atención</h5>
+                <p>atencioncliente@gestricredits.com</p>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -121,4 +171,3 @@
     </script>
 </body>
 </html>
-
