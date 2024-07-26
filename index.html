@@ -285,6 +285,23 @@
                 transform: translateY(-10px);
             }
         }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366; /* Color verde característico de WhatsApp */
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -570,7 +587,9 @@
         </div>
     </div>
 </footer>
-
+<a href="https://wa.me/661681898?text=Hola,%20necesito%20más%20información" class="whatsapp-button" target="_blank">
+    <i class="material-icons">chat</i>
+</a>
         
     </div>
 
