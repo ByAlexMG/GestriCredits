@@ -7,17 +7,17 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PublicarVentas {
+public class PublicarAlquiler {
 
     private String propertyImagePath;
     private String propertyImageFileName; // Mover aquí
     private List<String> modalImagePaths = new ArrayList<>();
     private int nextId = 1; // Para manejar el ID de la propiedad
 
-    public PublicarVentas() {
+    public PublicarAlquiler() {
         loadNextId(); // Cargar el ID al iniciar
 
-        JFrame frame = new JFrame("Publicador de Ventas Gestri-Credits");
+        JFrame frame = new JFrame("Publicador de Alquileres Gestri-Credits");
         frame.setSize(600, 900);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
@@ -209,7 +209,7 @@ public class PublicarVentas {
     }
 
     public void updateHTML(String location, String price, String description, String propertyImagePath, List<String> modalImageFileNames, String title, String modalTitle, String modalContent) {
-        String filePath = "pages\\venta.html"; // Reemplaza con la ruta real del archivo HTML
+        String filePath = "pages\\alquilar.html"; // Reemplaza con la ruta real del archivo HTML
         StringBuilder htmlContent = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -310,6 +310,6 @@ public class PublicarVentas {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new PublicarVentas());
+        SwingUtilities.invokeLater(() -> new PublicarAlquiler());
     }
 }

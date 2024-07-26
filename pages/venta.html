@@ -234,8 +234,7 @@
         </div>
 
         <div class="row">
-            <!-- Propiedad 1 -->
-            
+    
             <!-- Propiedad 2 -->
             <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
                 <div class="card" onclick="openModal(2)">
@@ -254,19 +253,33 @@
 
 
 
-<div class='col s12 m6 card-item' data-ubicacion='uwu' data-precio='uwu'>
-    <div class='card' onclick='openModal(15)'>
+            <div class='col s12 m6 card-item' data-ubicacion='Uwu' data-precio='333333'>
+                <div class='card' onclick='openModal(15)'>
+                    <div class='card-image'>
+                        <img src='../drawable/images/croquetas.jpg' alt='Imagen de la Propiedad'>
+                        <span class='card-title' id="nombre">uwu</span>
+                    </div>
+                    <div class='card-content'>
+                        <p>Ubicaci&oacuten: uwu</p>
+                        <p>Precio: g&euro;</p>
+                        <p>Descripci&oacuten: uwu</p>
+                    </div>
+                </div>
+            </div>
+<div class='col s12 m6 card-item' data-ubicacion='Japon' data-precio='500000'>
+    <div class='card' onclick='openModal(16)'>
         <div class='card-image'>
             <img src='../drawable/images/croquetas.jpg' alt='Imagen de la Propiedad'>
-            <span class='card-title' id="nombre">uwu</span>
+            <span class='card-title' id="nombre">Tokio</span>
         </div>
         <div class='card-content'>
-            <p>Ubicaci&oacuten: uwu</p>
-            <p>Precio: uwu&euro;</p>
-            <p>Descripci&oacuten: uwu</p>
+            <p>Ubicaci&oacuten: Japon</p>
+            <p>Precio: 500000&euro;</p>
+            <p>Descripci&oacuten: japonaso</p>
         </div>
     </div>
 </div>
+
 <!-- INSERTAR AQUI -->
 
 
@@ -358,6 +371,36 @@
         <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
     </div>
 </div>
+<div id='modal16' class='modal'>
+    <div class='modal-content'>
+        <h4>Shibuya</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas.jpg' alt='Imagen 1'></a>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas2.jpg' alt='Imagen 2'></a>
+        </div>
+        <p>Ubicaci&oacuten: Japon</p>
+        <p>Precio: 500000&euro;</p>
+        <p>Descripci&oacuten: Jjajajajaja</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
+<div id='modal17' class='modal'>
+    <div class='modal-content'>
+        <h4>awa</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas.jpg' alt='Imagen 1'></a>
+            <a class='carousel-item' href='#!'><img src='../drawable/images/croquetas2.jpg' alt='Imagen 2'></a>
+        </div>
+        <p>Ubicaci&oacuten: awa</p>
+        <p>Precio: 234&euro;</p>
+        <p>Descripci&oacuten: awa</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
 <!-- INSERTAR MODALES AQUI -->
 
 
@@ -403,67 +446,68 @@
     <!-- Scripts de Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var modals = document.querySelectorAll('.modal');
-            M.Modal.init(modals);
+       document.addEventListener('DOMContentLoaded', function() {
+    var modals = document.querySelectorAll('.modal');
+    M.Modal.init(modals);
 
-            var carousels = document.querySelectorAll('.carousel');
-            carousels.forEach(carousel => {
-                M.Carousel.init(carousel, {
-                    fullWidth: true,
-                    indicators: true,
-                    noWrap: false
-                });
-            });
-
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems, {});
+    var carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(carousel => {
+        M.Carousel.init(carousel, {
+            fullWidth: true,
+            indicators: true,
+            noWrap: false
         });
+    });
 
-        function openModal(id) {
-            var instance = M.Modal.getInstance(document.getElementById('modal' + id));
-            instance.open();
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems, {});
+});
 
-            var carousel = document.querySelector('#modal' + id + ' .carousel');
-            M.Carousel.init(carousel, {
-                fullWidth: true,
-                indicators: true,
-                noWrap: false
-            });
+function openModal(id) {
+    var instance = M.Modal.getInstance(document.getElementById('modal' + id));
+    instance.open();
+
+    var carousel = document.querySelector('#modal' + id + ' .carousel');
+    M.Carousel.init(carousel, {
+        fullWidth: true,
+        indicators: true,
+        noWrap: false
+    });
+}
+
+document.getElementById('search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    var ubicacion = document.getElementById('ubicacion').value.toLowerCase();
+    var precioMin = parseFloat(document.getElementById('precio-min').value) || 0;
+    var precioMax = parseFloat(document.getElementById('precio-max').value) || Infinity;
+
+    var cards = document.querySelectorAll('.card-item');
+
+    cards.forEach(card => {
+        var cardUbicacion = card.getAttribute('data-ubicacion').toLowerCase();
+        var cardPrecio = parseFloat(card.getAttribute('data-precio'));
+
+        if ((ubicacion === '' || cardUbicacion.includes(ubicacion)) &&
+            cardPrecio >= precioMin && cardPrecio <= precioMax) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
         }
+    });
+});
 
-        document.getElementById('search-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+document.getElementById('reset-button').addEventListener('click', function() {
+    document.getElementById('ubicacion').value = '';
+    document.getElementById('precio-min').value = '';
+    document.getElementById('precio-max').value = '';
 
-            var ubicacion = document.getElementById('ubicacion').value.toLowerCase();
-            var precioMin = parseFloat(document.getElementById('precio-min').value) || 0;
-            var precioMax = parseFloat(document.getElementById('precio-max').value) || Infinity;
+    var cards = document.querySelectorAll('.card-item');
+    cards.forEach(card => {
+        card.style.display = 'block';
+    });
+});
 
-            var cards = document.querySelectorAll('.card-item');
-
-            cards.forEach(card => {
-                var cardUbicacion = card.getAttribute('data-ubicacion').toLowerCase();
-                var cardPrecio = parseFloat(card.getAttribute('data-precio'));
-
-                if ((ubicacion === '' || cardUbicacion.includes(ubicacion)) &&
-                    cardPrecio >= precioMin && cardPrecio <= precioMax) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-
-        document.getElementById('reset-button').addEventListener('click', function() {
-            document.getElementById('ubicacion').value = '';
-            document.getElementById('precio-min').value = '';
-            document.getElementById('precio-max').value = '';
-
-            var cards = document.querySelectorAll('.card-item');
-            cards.forEach(card => {
-                card.style.display = 'block';
-            });
-        });
     </script>
 </body>
 </html>

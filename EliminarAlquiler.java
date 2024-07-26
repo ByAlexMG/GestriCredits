@@ -5,13 +5,13 @@ import java.io.*;
 import java.nio.file.*;
 import java.util.regex.*;
 
-public class EliminarVentas {
+public class EliminarAlquiler {
     private JFrame frame;
     private JTextField titleField;
     private JButton removeButton;
 
-    public EliminarVentas() {
-        frame = new JFrame("Eliminar Propiedad Ventas Gestri-Credits");
+    public EliminarAlquiler() {
+        frame = new JFrame("Eliminar Propiedad Alquiler Gestri-Credits");
         frame.setSize(400, 150);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);
@@ -46,7 +46,7 @@ public class EliminarVentas {
         }
 
         try {
-            Path path = Paths.get("pages\\venta.html"); // Replace with the path to your HTML file
+            Path path = Paths.get("pages\\alquilar.html"); // Replace with the path to your HTML file
             String content = new String(Files.readAllBytes(path));
 
             // Updated regular expression
@@ -83,6 +83,6 @@ public class EliminarVentas {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(EliminarVentas::new);
+        SwingUtilities.invokeLater(EliminarAlquiler::new);
     }
 }
