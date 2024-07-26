@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
         body {
-            background-color: #333; /* Color de fondo añadido */
+            background-color: #333;
         }
-        .header{
+        .header {
             top: 0;
             position: fixed; 
             width: 100%;
             z-index: 1000; 
             color: beige;
         }
-        .contenido{
-            margin-top:10rem;
+        .contenido {
+            margin-top: 10rem;
         }
         .nav-wrapper {
             background-color: #333;
@@ -32,7 +32,7 @@
             justify-content: center;
             align-items: center;
             height: 100%;
-            max-width: calc(100% - 40px); /* Asegura que haya margen en pantallas grandes */
+            max-width: calc(100% - 40px);
         }
         .nav-wrapper ul {
             display: flex;
@@ -75,7 +75,7 @@
             height: auto;
         }
         .carousel.carousel-slider {
-            height: 300px; /* Ajustar la altura según sea necesario */
+            height: 300px;
         }
         .carousel-fixed-item {
             display: none;
@@ -84,9 +84,9 @@
             margin-bottom: 30px;
         }
         .card-title {
-            font-weight: 700; /* Ajusta el grosor del texto aquí */
+            font-weight: 700;
         }
-        #nombre{
+        #nombre {
             color: #ffffff;
             font-weight: bold;
         }
@@ -97,62 +97,55 @@
             margin: 0;
         }
         .search-form .btn {
-            margin-right: 10px; /* Espacio entre los botones */
+            margin-right: 10px;
         }
         .reset-button {
             background-color: red;
             color: white;
         }
-        .card-content{
+        .card-content {
             color: black;
         }
-        
-.page-footer {
-    background-color: #222;
-    color: beige;
-    padding: 40px 0;
-}
-
-.page-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.container{
-    color: #333;
-}
-.page-footer h5 {
-    margin-bottom: 20px;
-}
-
-.page-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-.page-footer ul li {
-    margin-bottom: 10px;
-}
-
-.page-footer ul a {
-    color: beige;
-    text-decoration: none;
-}
-
-.page-footer ul a:hover {
-    text-decoration: underline;
-}
-
-.footer-copyright {
-    background-color: #111;
-    padding: 10px 0;
-    text-align: center;
-}
-.whatsapp-button {
+        .page-footer {
+            background-color: #222;
+            color: beige;
+            padding: 40px 0;
+        }
+        .page-footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            color: #333;
+        }
+        .page-footer h5 {
+            margin-bottom: 20px;
+        }
+        .page-footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .page-footer ul li {
+            margin-bottom: 10px;
+        }
+        .page-footer ul a {
+            color: beige;
+            text-decoration: none;
+        }
+        .page-footer ul a:hover {
+            text-decoration: underline;
+        }
+        .footer-copyright {
+            background-color: #111;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .whatsapp-button {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #25D366; /* Color verde característico de WhatsApp */
+            background-color: #25D366;
             color: white;
             border-radius: 50%;
             width: 60px;
@@ -165,7 +158,7 @@
             cursor: pointer;
             z-index: 1000;
         }
-        .titulaso{
+        .titulaso {
             color: #fff;
         }
     </style>
@@ -197,6 +190,7 @@
         <li><a href="empresa.html">Empresa</a></li>
         <li><a href="contacto.html">Contacto</a></li>
     </ul>
+
     <div class="contenido">
         <div class="container" id="propiedades">
             <h1 class="titulaso">Propiedades en Venta</h1>
@@ -229,7 +223,7 @@
                 </form>
             </div>
 
-            <div class="row">
+            <div class="row" id="nuevas-propiedades">
                 <!-- Propiedad 1 -->
                 <div class="col s12 m6 card-item" data-ubicacion="Madrid" data-precio="300000">
                     <div class="card" onclick="openModal(1)">
@@ -245,277 +239,171 @@
                     </div>
                 </div>
 
-                <!-- Modal Structure1 -->
-        <div id="modal1" class="modal">
-            <div class="modal-content">
-                <h4>Propiedad 1</h4>
-                <div class="carousel carousel-slider">
-                    <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 1"></a>
-                    <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 2"></a>
-                    <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 3"></a>
-                </div>
-                <p>Ubicación: Madrid</p>
-                <p>Precio: 300,000€</p>
-                <p>Descripción: Hermoso apartamento en el centro de la ciudad.</p>
-                <p>Detalles adicionales: 3 habitaciones, 2 baños, 120m².</p>
-                <p>Año de construcción: 2010</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-            </div>
-        </div>
-                <!-- Propiedad 2 -->
-                <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
-                    <div class="card" onclick="openModal(2)">
-                        <div class="card-image">
-                            <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
-                            <span class="card-title" id="nombre">Propiedad 2</span>
-                        </div>
-                        <div class="card-content">
-                            <p>Ubicación: Barcelona</p>
-                            <p>Precio: 450,000€</p>
-                            <p>Descripción: Amplio piso con vistas al mar.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Modal Structure2 -->
-                <div id="modal2" class="modal">
+ 
+                <div class='col s12 m6 card-item' data-ubicacion='qweqwe' data-precio='qwe'>
+    <div class='card' onclick='openModal(3)'>
+        <div class='card-image'>
+            <img src='../drawable/images/croquetas.jpg' alt='Imagen de la Propiedad'>
+            <span class='card-title' id="nombre">qwe</span>
+        </div>
+        <div class='card-content'>
+            <p>Ubicaci&oacuten: qweqwe</p>
+            <p>Precio: qwe&euro;</p>
+            <p>Descripci&oacuten: qwe</p>
+        </div>
+    </div>
+</div>
+<!-- INSERTAR AQUI -->
+
+                <!-- Modal Structure 1 -->
+                <div id="modal1" class="modal">
                     <div class="modal-content">
-                        <h4>Propiedad 2</h4>
+                        <h4>Propiedad 1</h4>
                         <div class="carousel carousel-slider">
-                            <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                            <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
-                            <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
+                            <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 1"></a>
+                            <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 2"></a>
+                            <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 3"></a>
                         </div>
-                        <p>Ubicación: Barcelona</p>
-                        <p>Precio: 450,000€</p>
-                        <p>Descripción: Amplio piso con vistas al mar.</p>
-                        <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
-                        <p>Año de construcción: 2015</p>
+                        <p>Ubicación: Madrid</p>
+                        <p>Precio: 300,000€</p>
+                        <p>Descripción: Hermoso apartamento en el centro de la ciudad.</p>
                     </div>
                     <div class="modal-footer">
                         <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
                     </div>
                 </div>
-                <!-- Propiedad 3 -->
-                <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
-                    <div class="card" onclick="openModal(2)">
-                        <div class="card-image">
-                            <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
-                            <span class="card-title" id="nombre">Propiedad 2</span>
-                        </div>
-                        <div class="card-content">
-                            <p>Ubicación: Barcelona</p>
-                            <p>Precio: 450,000€</p>
-                            <p>Descripción: Amplio piso con vistas al mar.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Modal Structure3 -->
-                
-        <div id="modal3" class="modal">
-            <div class="modal-content">
-                <h4>Propiedad 4</h4>
-                <div class="carousel carousel-slider">
-                    <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                    <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
-                    <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
-                </div>
-                <p>Ubicación: Barcelona</p>
-                <p>Precio: 450,000€</p>
-                <p>Descripción: Amplio piso con vistas al mar.</p>
-                <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
-                <p>Año de construcción: 2015</p>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+</div>
+<div id='modal3' class='modal'>
+    <div class='modal-content'>
+        <h4>qwe</h4>
+        <p>qwe</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
+<!-- INSERTAR MODALES AQUI -->
             </div>
         </div>
-                <!-- Propiedad 4 -->
-                <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
-                    <div class="card" onclick="openModal(2)">
-                        <div class="card-image">
-                            <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
-                            <span class="card-title" id="nombre">Propiedad 2</span>
-                        </div>
-                        <div class="card-content">
-                            <p>Ubicación: Barcelona</p>
-                            <p>Precio: 450,000€</p>
-                            <p>Descripción: Amplio piso con vistas al mar.</p>
-                        </div>
-                    </div>
-                </div>
-<!-- Modal Structure4 -->
-                <div id="modal4" class="modal">
-                    <div class="modal-content">
-                        <h4>Propiedad 4</h4>
-                        <div class="carousel carousel-slider">
-                            <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                            <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
-                            <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
-                        </div>
-                        <p>Ubicación: Barcelona</p>
-                        <p>Precio: 450,000€</p>
-                        <p>Descripción: Amplio piso con vistas al mar.</p>
-                        <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
-                        <p>Año de construcción: 2015</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                    </div>
-                </div>
-                <!-- Propiedad 5 -->
-                <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
-                    <div class="card" onclick="openModal(2)">
-                        <div class="card-image">
-                            <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
-                            <span class="card-title" id="nombre">Propiedad 2</span>
-                        </div>
-                        <div class="card-content">
-                            <p>Ubicación: Barcelona</p>
-                            <p>Precio: 450,000€</p>
-                            <p>Descripción: Amplio piso con vistas al mar.</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- Modal Structure5 -->
-      
-                <div id="modal5" class="modal">
-                    <div class="modal-content">
-                        <h4>Propiedad 5</h4>
-                        <div class="carousel carousel-slider">
-                            <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                            <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
-                            <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
-                        </div>
-                        <p>Ubicación: Barcelona</p>
-                        <p>Precio: 450,000€</p>
-                        <p>Descripción: Amplio piso con vistas al mar.</p>
-                        <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
-                        <p>Año de construcción: 2015</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-                    </div>
-                </div>
-                <!-- Añadir más propiedades aquí -->
-
-
-
-
-                <!-- INSERTAR AQUI -->
-
-
-
-
-                
-            </div>
-        </div>
-
-        
-        <a href="https://wa.me/661681898?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20que%20me%20informase%20sobre%20sus%20servicios." class="whatsapp-button" target="_blank">
-            <i class="material-icons">chat</i>
-        </a>
-                        <!-- Pie de página -->
-            <footer class="page-footer">
-                <div class="container">
-                    <div class="row">
-                        <!-- Números de teléfono -->
-                        <div class="col s12 m4">
-                            <h5 class="white-text">Contactos</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="tel:+1234567890">Teléfono: ...</a></li>
-                                <li><a class="grey-text text-lighten-3" href="tel:+0987654321">Teléfono: ...</a></li>
-                            </ul>
-                        </div>
-                        <!-- Direcciones de correo electrónico -->
-                        <div class="col s12 m4">
-                            <h5 class="white-text">Correos Electrónicos</h5>
-                            <ul>
-                                <li><a class="grey-text text-lighten-3" href="...">...</a></li>
-                                <li><a class="grey-text text-lighten-3" href="...">...</a></li>
-                            </ul>
-                        </div>
-                        <!-- Dirección física -->
-                        <div class="col s12 m4">
-                            <h5 class="white-text">Dirección</h5>
-                            <p class="grey-text text-lighten-3">29190, Calle ..., Ciudad, España</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                        © 2024 G€striCredits. Todos los derechos reservados.
-                    </div>
-                </div>
-            </footer>
     </div>
 
+    <div class="whatsapp-button" onclick="window.open('https://wa.me/1234567890', '_blank')">
+        <i class="material-icons">chat</i>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="page-footer">
+        <div class="container">
+            <h5 class="white-text">G€striCredits</h5>
+            <ul>
+                <li><a class="white-text" href="../index.html">Inicio</a></li>
+                <li><a class="white-text" href="venta.html">Venta</a></li>
+                <li><a class="white-text" href="alquilar.html">Alquilar</a></li>
+                <li><a class="white-text" href="noticias.html">Noticias</a></li>
+                <li><a class="white-text" href="empresa.html">Empresa</a></li>
+                <li><a class="white-text" href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2024 G€striCredits
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Materialize -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var modals = document.querySelectorAll('.modal');
-            M.Modal.init(modals);
-
-            var carousels = document.querySelectorAll('.carousel');
-            carousels.forEach(carousel => {
-                M.Carousel.init(carousel, {
-                    fullWidth: true,
-                    indicators: true,
-                    noWrap: false
-                });
-            });
-
-            var elems = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elems, {});
+            M.Sidenav.init(document.querySelectorAll('.sidenav'));
+            M.Modal.init(document.querySelectorAll('.modal'));
+            M.Carousel.init(document.querySelectorAll('.carousel'));
         });
 
-        function openModal(id) {
-            var instance = M.Modal.getInstance(document.getElementById('modal' + id));
+        // Función para abrir el modal
+        function openModal(modalId) {
+            var modal = document.getElementById('modal' + modalId);
+            var instance = M.Modal.getInstance(modal);
             instance.open();
-
-            var carousel = document.querySelector('#modal' + id + ' .carousel');
-            M.Carousel.init(carousel, {
-                fullWidth: true,
-                indicators: true,
-                noWrap: false
-            });
         }
 
-        document.getElementById('search-form').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Función para añadir una nueva propiedad
+        function añadirPropiedad(id, nombre, ubicacion, precio, descripcion, imagenes) {
+            var contenedor = document.getElementById('nuevas-propiedades');
+            
+            // Crear nuevo elemento de propiedad
+            var propiedadHTML = `
+                <div class="col s12 m6 card-item" data-ubicacion="${ubicacion}" data-precio="${precio}">
+                    <div class="card" onclick="openModal(${id})">
+                        <div class="card-image">
+                            <img src="${imagenes[0]}" alt="Propiedad ${id}">
+                            <span class="card-title" id="nombre">${nombre}</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Ubicación: ${ubicacion}</p>
+                            <p>Precio: ${precio}€</p>
+                            <p>Descripción: ${descripcion}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Modal Structure -->
+                <div id="modal${id}" class="modal">
+                    <div class="modal-content">
+                        <h4>${nombre}</h4>
+                        <div class="carousel carousel-slider">
+                            ${imagenes.map(img => `<a class="carousel-item" href="#!"><img src="${img}" alt="Imagen ${id}"></a>`).join('')}
+                        </div>
+                        <p>${descripcion}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                    </div>
+                </div>
+            `;
+            
+            contenedor.insertAdjacentHTML('beforeend', propiedadHTML);
+            
+            // Re-inicializar los modales y carouseles
+            M.Modal.init(document.querySelectorAll('.modal'));
+            M.Carousel.init(document.querySelectorAll('.carousel'));
+        }
 
+        // Ejemplo de uso
+        //añadirPropiedad(2, 'Propiedad 2', 'Barcelona', 500000, 'Espacioso apartamento con vistas al mar.', ['../drawable/propiedades/propiedad2/imagen1.jpg', '../drawable/propiedades/propiedad2/imagen2.jpg']);
+
+        // Manejo del formulario de búsqueda
+        document.getElementById('search-form').addEventListener('submit', function(event) {
+            event.preventDefault();
             var ubicacion = document.getElementById('ubicacion').value.toLowerCase();
             var precioMin = parseFloat(document.getElementById('precio-min').value) || 0;
             var precioMax = parseFloat(document.getElementById('precio-max').value) || Infinity;
 
-            var cards = document.querySelectorAll('.card-item');
+            var propiedades = document.querySelectorAll('.card-item');
 
-            cards.forEach(card => {
-                var cardUbicacion = card.getAttribute('data-ubicacion').toLowerCase();
-                var cardPrecio = parseFloat(card.getAttribute('data-precio'));
+            propiedades.forEach(function(propiedad) {
+                var propUbicacion = propiedad.getAttribute('data-ubicacion').toLowerCase();
+                var propPrecio = parseFloat(propiedad.getAttribute('data-precio'));
 
-                if ((ubicacion === '' || cardUbicacion.includes(ubicacion)) &&
-                    cardPrecio >= precioMin && cardPrecio <= precioMax) {
-                    card.style.display = 'block';
+                if (propUbicacion.includes(ubicacion) && propPrecio >= precioMin && propPrecio <= precioMax) {
+                    propiedad.style.display = 'block';
                 } else {
-                    card.style.display = 'none';
+                    propiedad.style.display = 'none';
                 }
             });
         });
 
+        // Manejo del botón de restablecer
         document.getElementById('reset-button').addEventListener('click', function() {
             document.getElementById('ubicacion').value = '';
             document.getElementById('precio-min').value = '';
             document.getElementById('precio-max').value = '';
 
-            var cards = document.querySelectorAll('.card-item');
-            cards.forEach(card => {
-                card.style.display = 'block';
+            var propiedades = document.querySelectorAll('.card-item');
+            propiedades.forEach(function(propiedad) {
+                propiedad.style.display = 'block';
             });
         });
     </script>
