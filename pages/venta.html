@@ -10,6 +10,16 @@
         body {
             background-color: #333; /* Color de fondo añadido */
         }
+        .header{
+            top: 0;
+            position: fixed; 
+            width: 100%;
+            z-index: 1000; 
+            color: beige;
+        }
+        .contenido{
+            margin-top:10rem;
+        }
         .nav-wrapper {
             background-color: #333;
             padding-right: 20px; /* Espacio a la derecha */
@@ -139,7 +149,7 @@
     </style>
 </head>
 <body>
-    <nav>
+    <nav class="header">
         <div class="nav-wrapper">
             <a href="../index.html" class="brand-logo">G€striCredits</a>
             <a href="#" data-target="mobile-menu" class="sidenav-trigger">
@@ -149,7 +159,7 @@
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="venta.html">Venta</a></li>
                 <li><a href="alquilar.html">Alquilar</a></li>
-                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
                 <li><a href="empresa.html">Empresa</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
@@ -161,243 +171,243 @@
         <li><a href="../index.html">Inicio</a></li>
         <li><a href="venta.html">Venta</a></li>
         <li><a href="alquilar.html">Alquilar</a></li>
-        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
         <li><a href="empresa.html">Empresa</a></li>
         <li><a href="contacto.html">Contacto</a></li>
     </ul>
+    <div class="contenido">
+        <div class="container" id="propiedades">
+            <h1>Propiedades en Venta</h1>
+            
+            <!-- Formulario de búsqueda -->
+            <div class="search-form">
+                <form id="search-form">
+                    <div class="row">
+                        <div class="input-field col s12 m4">
+                            <input id="ubicacion" type="text" class="validate">
+                            <label for="ubicacion">Ubicación</label>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <input id="precio-min" type="number" class="validate">
+                            <label for="precio-min">Precio Mínimo (€)</label>
+                        </div>
+                        <div class="input-field col s12 m4">
+                            <input id="precio-max" type="number" class="validate">
+                            <label for="precio-max">Precio Máximo (€)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn waves-effect waves-light" type="submit">Buscar
+                                <i class="material-icons right">search</i>
+                            </button>
+                            <button class="btn reset-button waves-effect waves-light" type="button" id="reset-button">Restablecer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
-    <div class="container" id="propiedades">
-        <h1>Propiedades en Venta</h1>
-        
-        <!-- Formulario de búsqueda -->
-        <div class="search-form">
-            <form id="search-form">
-                <div class="row">
-                    <div class="input-field col s12 m4">
-                        <input id="ubicacion" type="text" class="validate">
-                        <label for="ubicacion">Ubicación</label>
-                    </div>
-                    <div class="input-field col s12 m4">
-                        <input id="precio-min" type="number" class="validate">
-                        <label for="precio-min">Precio Mínimo (€)</label>
-                    </div>
-                    <div class="input-field col s12 m4">
-                        <input id="precio-max" type="number" class="validate">
-                        <label for="precio-max">Precio Máximo (€)</label>
+            <div class="row">
+                <!-- Propiedad 1 -->
+                <div class="col s12 m6 card-item" data-ubicacion="Madrid" data-precio="300000">
+                    <div class="card" onclick="openModal(1)">
+                        <div class="card-image">
+                            <img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Propiedad 1">
+                            <span class="card-title" id="nombre">Propiedad 1</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Ubicación: Madrid</p>
+                            <p>Precio: 300,000€</p>
+                            <p>Descripción: Hermoso apartamento en el centro de la ciudad.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <button class="btn waves-effect waves-light" type="submit">Buscar
-                            <i class="material-icons right">search</i>
-                        </button>
-                        <button class="btn reset-button waves-effect waves-light" type="button" id="reset-button">Restablecer</button>
+                <!-- Propiedad 2 -->
+                <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
+                    <div class="card" onclick="openModal(2)">
+                        <div class="card-image">
+                            <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
+                            <span class="card-title" id="nombre">Propiedad 2</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Ubicación: Barcelona</p>
+                            <p>Precio: 450,000€</p>
+                            <p>Descripción: Amplio piso con vistas al mar.</p>
+                        </div>
                     </div>
                 </div>
-            </form>
+                <!-- Propiedad 3 -->
+                <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
+                    <div class="card" onclick="openModal(2)">
+                        <div class="card-image">
+                            <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
+                            <span class="card-title" id="nombre">Propiedad 2</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Ubicación: Barcelona</p>
+                            <p>Precio: 450,000€</p>
+                            <p>Descripción: Amplio piso con vistas al mar.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Propiedad 4 -->
+                <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
+                    <div class="card" onclick="openModal(2)">
+                        <div class="card-image">
+                            <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
+                            <span class="card-title" id="nombre">Propiedad 2</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Ubicación: Barcelona</p>
+                            <p>Precio: 450,000€</p>
+                            <p>Descripción: Amplio piso con vistas al mar.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Propiedad 5 -->
+                <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
+                    <div class="card" onclick="openModal(2)">
+                        <div class="card-image">
+                            <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
+                            <span class="card-title" id="nombre">Propiedad 2</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Ubicación: Barcelona</p>
+                            <p>Precio: 450,000€</p>
+                            <p>Descripción: Amplio piso con vistas al mar.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Añadir más propiedades aquí -->
+            </div>
         </div>
 
-        <div class="row">
-            <!-- Propiedad 1 -->
-            <div class="col s12 m6 card-item" data-ubicacion="Madrid" data-precio="300000">
-                <div class="card" onclick="openModal(1)">
-                    <div class="card-image">
-                        <img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Propiedad 1">
-                        <span class="card-title" id="nombre">Propiedad 1</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Ubicación: Madrid</p>
-                        <p>Precio: 300,000€</p>
-                        <p>Descripción: Hermoso apartamento en el centro de la ciudad.</p>
-                    </div>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Propiedad 1</h4>
+                <div class="carousel carousel-slider">
+                    <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 1"></a>
+                    <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 2"></a>
+                    <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 3"></a>
                 </div>
+                <p>Ubicación: Madrid</p>
+                <p>Precio: 300,000€</p>
+                <p>Descripción: Hermoso apartamento en el centro de la ciudad.</p>
+                <p>Detalles adicionales: 3 habitaciones, 2 baños, 120m².</p>
+                <p>Año de construcción: 2010</p>
             </div>
-            <!-- Propiedad 2 -->
-            <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
-                <div class="card" onclick="openModal(2)">
-                    <div class="card-image">
-                        <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
-                        <span class="card-title" id="nombre">Propiedad 2</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Ubicación: Barcelona</p>
-                        <p>Precio: 450,000€</p>
-                        <p>Descripción: Amplio piso con vistas al mar.</p>
-                    </div>
-                </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
             </div>
-            <!-- Propiedad 3 -->
-            <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
-                <div class="card" onclick="openModal(2)">
-                    <div class="card-image">
-                        <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
-                        <span class="card-title" id="nombre">Propiedad 2</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Ubicación: Barcelona</p>
-                        <p>Precio: 450,000€</p>
-                        <p>Descripción: Amplio piso con vistas al mar.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Propiedad 4 -->
-            <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
-                <div class="card" onclick="openModal(2)">
-                    <div class="card-image">
-                        <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
-                        <span class="card-title" id="nombre">Propiedad 2</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Ubicación: Barcelona</p>
-                        <p>Precio: 450,000€</p>
-                        <p>Descripción: Amplio piso con vistas al mar.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Propiedad 5 -->
-            <div class="col s12 m6 card-item" data-ubicacion="Barcelona" data-precio="450000">
-                <div class="card" onclick="openModal(2)">
-                    <div class="card-image">
-                        <img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Propiedad 2">
-                        <span class="card-title" id="nombre">Propiedad 2</span>
-                    </div>
-                    <div class="card-content">
-                        <p>Ubicación: Barcelona</p>
-                        <p>Precio: 450,000€</p>
-                        <p>Descripción: Amplio piso con vistas al mar.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Añadir más propiedades aquí -->
         </div>
-    </div>
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <h4>Propiedad 1</h4>
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 1"></a>
-                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 2"></a>
-                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad1/croquetas.jpg" alt="Image 3"></a>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <h4>Propiedad 2</h4>
+                <div class="carousel carousel-slider">
+                    <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
+                    <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
+                    <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
+                </div>
+                <p>Ubicación: Barcelona</p>
+                <p>Precio: 450,000€</p>
+                <p>Descripción: Amplio piso con vistas al mar.</p>
+                <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
+                <p>Año de construcción: 2015</p>
             </div>
-            <p>Ubicación: Madrid</p>
-            <p>Precio: 300,000€</p>
-            <p>Descripción: Hermoso apartamento en el centro de la ciudad.</p>
-            <p>Detalles adicionales: 3 habitaciones, 2 baños, 120m².</p>
-            <p>Año de construcción: 2010</p>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
         </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <h4>Propiedad 4</h4>
+                <div class="carousel carousel-slider">
+                    <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
+                    <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
+                    <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
+                </div>
+                <p>Ubicación: Barcelona</p>
+                <p>Precio: 450,000€</p>
+                <p>Descripción: Amplio piso con vistas al mar.</p>
+                <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
+                <p>Año de construcción: 2015</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
         </div>
+        <div id="modal4" class="modal">
+            <div class="modal-content">
+                <h4>Propiedad 4</h4>
+                <div class="carousel carousel-slider">
+                    <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
+                    <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
+                    <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
+                </div>
+                <p>Ubicación: Barcelona</p>
+                <p>Precio: 450,000€</p>
+                <p>Descripción: Amplio piso con vistas al mar.</p>
+                <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
+                <p>Año de construcción: 2015</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
+        </div>
+        <div id="modal5" class="modal">
+            <div class="modal-content">
+                <h4>Propiedad 5</h4>
+                <div class="carousel carousel-slider">
+                    <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
+                    <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
+                    <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
+                </div>
+                <p>Ubicación: Barcelona</p>
+                <p>Precio: 450,000€</p>
+                <p>Descripción: Amplio piso con vistas al mar.</p>
+                <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
+                <p>Año de construcción: 2015</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
+        </div>
+                        <!-- Pie de página -->
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="row">
+                        <!-- Números de teléfono -->
+                        <div class="col s12 m4">
+                            <h5 class="white-text">Contactos</h5>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="tel:+1234567890">Teléfono: ...</a></li>
+                                <li><a class="grey-text text-lighten-3" href="tel:+0987654321">Teléfono: ...</a></li>
+                            </ul>
+                        </div>
+                        <!-- Direcciones de correo electrónico -->
+                        <div class="col s12 m4">
+                            <h5 class="white-text">Correos Electrónicos</h5>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                                <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                            </ul>
+                        </div>
+                        <!-- Dirección física -->
+                        <div class="col s12 m4">
+                            <h5 class="white-text">Dirección</h5>
+                            <p class="grey-text text-lighten-3">29190, Calle ..., Ciudad, España</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        © 2024 G€striCredits. Todos los derechos reservados.
+                    </div>
+                </div>
+            </footer>
     </div>
-
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <h4>Propiedad 2</h4>
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
-                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
-            </div>
-            <p>Ubicación: Barcelona</p>
-            <p>Precio: 450,000€</p>
-            <p>Descripción: Amplio piso con vistas al mar.</p>
-            <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
-            <p>Año de construcción: 2015</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-        </div>
-    </div>
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <h4>Propiedad 4</h4>
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
-                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
-            </div>
-            <p>Ubicación: Barcelona</p>
-            <p>Precio: 450,000€</p>
-            <p>Descripción: Amplio piso con vistas al mar.</p>
-            <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
-            <p>Año de construcción: 2015</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-        </div>
-    </div>
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <h4>Propiedad 4</h4>
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
-                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
-            </div>
-            <p>Ubicación: Barcelona</p>
-            <p>Precio: 450,000€</p>
-            <p>Descripción: Amplio piso con vistas al mar.</p>
-            <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
-            <p>Año de construcción: 2015</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-        </div>
-    </div>
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <h4>Propiedad 5</h4>
-            <div class="carousel carousel-slider">
-                <a class="carousel-item" href="#one!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg"alt="Image 1"></a>
-                <a class="carousel-item" href="#two!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 2"></a>
-                <a class="carousel-item" href="#three!"><img src="../drawable/propiedades/propiedad2/croquetas.jpg" alt="Image 3"></a>
-            </div>
-            <p>Ubicación: Barcelona</p>
-            <p>Precio: 450,000€</p>
-            <p>Descripción: Amplio piso con vistas al mar.</p>
-            <p>Detalles adicionales: 4 habitaciones, 3 baños, 150m².</p>
-            <p>Año de construcción: 2015</p>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
-        </div>
-    </div>
-            <!-- Pie de página -->
-<footer class="page-footer">
-    <div class="container">
-        <div class="row">
-            <!-- Números de teléfono -->
-            <div class="col s12 m4">
-                <h5 class="white-text">Contactos</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="tel:+1234567890">Teléfono: ...</a></li>
-                    <li><a class="grey-text text-lighten-3" href="tel:+0987654321">Teléfono: ...</a></li>
-                </ul>
-            </div>
-            <!-- Direcciones de correo electrónico -->
-            <div class="col s12 m4">
-                <h5 class="white-text">Correos Electrónicos</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="...">...</a></li>
-                    <li><a class="grey-text text-lighten-3" href="...">...</a></li>
-                </ul>
-            </div>
-            <!-- Dirección física -->
-            <div class="col s12 m4">
-                <h5 class="white-text">Dirección</h5>
-                <p class="grey-text text-lighten-3">29190, Calle ..., Ciudad, España</p>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container">
-            © 2024 G€striCredits. Todos los derechos reservados.
-        </div>
-    </div>
-</footer>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>

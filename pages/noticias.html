@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G€striCredits</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+        }
+        .contenido {
+            margin-top: 10rem;
+        }
+        .header {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            color: beige;
+        }
+        .modal-content{
+            color: #333;
+        }
+        .nav-wrapper {
+            background-color: #333;
+            padding-right: 20px;
+        }
+        .brand-logo {
+            margin-left: 10px;
+        }
+        .nav-wrapper .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            max-width: calc(100% - 40px);
+        }
+        .nav-wrapper ul {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-wrapper ul li {
+            margin: 0 15px;
+        }
+        @media only screen and (max-width: 992px) {
+            .nav-wrapper ul {
+                display: none;
+            }
+            .sidenav {
+                width: 250px;
+            }
+        }
+        .container {
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        .search-form {
+            margin-bottom: 30px;
+        }
+        .search-form input {
+            margin-bottom: 10px;
+        }
+        .search-form .input-field {
+            margin: 0;
+        }
+        .search-form .btn {
+            margin-right: 10px;
+        }
+        .reset-button {
+            background-color: red;
+            color: white;
+        }
+        .contact-info {
+            margin-top: 30px;
+            background-color: #444;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .contact-info h2 {
+            margin-bottom: 20px;
+        }
+        .contact-info .info-item {
+            margin-bottom: 15px;
+        }
+        .contact-info .info-item h5 {
+            margin: 0;
+            color: #f5f5f5;
+        }
+        .contact-info .info-item p {
+            margin: 0;
+        }
+        .page-footer {
+            background-color: #222;
+            color: beige;
+            padding: 40px 0;
+        }
+        .page-footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page-footer h5 {
+            margin-bottom: 20px;
+        }
+        .page-footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .page-footer ul li {
+            margin-bottom: 10px;
+        }
+        .page-footer ul a {
+            color: beige;
+            text-decoration: none;
+        }
+        .page-footer ul a:hover {
+            text-decoration: underline;
+        }
+        .footer-copyright {
+            background-color: #111;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .card-content p {
+            color: #333;
+        }
+        .card {
+            background-color: #fff;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .card .card-image img {
+            height: 100%;
+            object-fit: cover;
+        }
+        .card .card-image {
+            width: 150px; /* Ancho fijo para la imagen */
+            height: auto; /* Ajusta la altura automáticamente */
+        }
+        .card-action {
+            text-align: right;
+        }
+        .card.horizontal .card-stacked {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <nav class="header">
+        <div class="nav-wrapper">
+            <a href="../index.html" class="brand-logo">G€striCredits</a>
+            <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="venta.html">Venta</a></li>
+                <li><a href="alquilar.html">Alquilar</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sidenav -->
+    <ul id="mobile-menu" class="sidenav">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="venta.html">Venta</a></li>
+        <li><a href="alquilar.html">Alquilar</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="empresa.html">Empresa</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+    <div class="contenido"></div>
+    <!-- Sección de noticias -->
+    <div class="container">
+        <h2 class="white-text center-align">Noticias y Anuncios</h2>
+        <div class="row">
+            <div class="search-form">
+                <div class="input-field">
+                    <input id="search" type="text" class="validate">
+                    <label for="search">Buscar noticias por título</label>
+                </div>
+                <button id="search-btn" class="btn">Buscar</button>
+                <button id="reset-btn" class="btn reset-button">Resetear</button>
+            </div>
+            <!-- Anuncio 1 -->
+            <div class="col s12 m6">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="../drawable/images/croquetas.jpg" alt="Imagen 1">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h5>Croqueta</h5>
+                            <p>Descripción breve del anuncio. Información relevante y atractiva para captar la atención de los usuarios.</p>
+                        </div>
+                        <div class="card-action">
+                            <a class="modal-trigger" href="#modal1">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Título del Anuncio 1</h4>
+                    <p>Información detallada sobre el anuncio. Aquí se proporciona una descripción más extensa y completa para que los usuarios puedan obtener todos los detalles necesarios.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+            </div>
+            <!-- Anuncio 2 -->
+            <div class="col s12 m6">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="../drawable/images/croquetas.jpg" alt="Imagen 2">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h5>CroquetaRoja</h5>
+                            <p>Descripción breve del anuncio. Información relevante y atractiva para captar la atención de los usuarios.</p>
+                        </div>
+                        <div class="card-action">
+                            <a class="modal-trigger" href="#modal2">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <h4>Título del Anuncio 2</h4>
+                    <p>Información detallada sobre el anuncio. Aquí se proporciona una descripción más extensa y completa para que los usuarios puedan obtener todos los detalles necesarios.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+            </div>
+            <!-- Anuncio 3 -->
+            <div class="col s12 m6">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="../drawable/images/croquetas.jpg" alt="Imagen 3">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h5>Título del Anuncio 3</h5>
+                            <p>Descripción breve del anuncio. Información relevante y atractiva para captar la atención de los usuarios.</p>
+                        </div>
+                        <div class="card-action">
+                            <a class="modal-trigger" href="#modal3">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal Structure -->
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <h4>Título del Anuncio 3</h4>
+                    <p>Información detallada sobre el anuncio. Aquí se proporciona una descripción más extensa y completa para que los usuarios puedan obtener todos los detalles necesarios.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Pie de página -->
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Números de teléfono -->
+                <div class="col s12 m4">
+                    <h5 class="white-text">Contactos</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="tel:+1234567890">Teléfono: ...</a></li>
+                        <li><a class="grey-text text-lighten-3" href="tel:+0987654321">Teléfono: ...</a></li>
+                    </ul>
+                </div>
+                <!-- Direcciones de correo electrónico -->
+                <div class="col s12 m4">
+                    <h5 class="white-text">Correos Electrónicos</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                        <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                    </ul>
+                </div>
+                <!-- Dirección física -->
+                <div class="col s12 m4">
+                    <h5 class="white-text">Dirección</h5>
+                    <p class="grey-text text-lighten-3">29190, Calle ..., Ciudad, España</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2024 G€striCredits. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(elems, {});
+            var modals = document.querySelectorAll('.modal');
+            M.Modal.init(modals, {});
+    
+            // Lógica de búsqueda
+            const searchInput = document.getElementById('search');
+            const searchBtn = document.getElementById('search-btn');
+            const resetBtn = document.getElementById('reset-btn');
+            const cards = document.querySelectorAll('.card');
+    
+            searchBtn.addEventListener('click', function() {
+                const query = searchInput.value.toLowerCase();
+                cards.forEach(card => {
+                    const title = card.querySelector('.card-content h5').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        card.parentElement.style.display = 'block';
+                    } else {
+                        card.parentElement.style.display = 'none';
+                    }
+                });
+            });
+    
+            resetBtn.addEventListener('click', function() {
+                searchInput.value = '';
+                cards.forEach(card => {
+                    card.parentElement.style.display = 'block';
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

@@ -17,7 +17,6 @@
             top: 0;
             position: fixed; 
             width: 100%;
-            top: 0;
             z-index: 1000; 
             color: beige;
         }
@@ -26,18 +25,19 @@
             color: beige;
         }
         .background {
-            background-image: url('./drawable/images/croquetas.jpg');
-            background-attachment: fixed;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: beige;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
+    background-image: url('./drawable/images/croquetas.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: beige;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
         .nav-wrapper .container {
             display: flex;
             justify-content: center;
@@ -55,6 +55,9 @@
             margin: 0 15px;
         }
         @media only screen and (max-width: 992px) {
+            .background {
+        background-attachment: scroll;
+    }
             .nav-wrapper ul {
                 display: none;
             }
@@ -69,6 +72,7 @@
         }
         .content {
             background-color: #333;
+            margin-top: 5rem;
         }
         .top-ventas-title {
             font-weight: bold;
@@ -253,10 +257,10 @@
 }
 @media only screen and (max-width: 1200px) {
             .noticias-grid {
-                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+                grid-template-columns: 1fr;
             }
             .noticia {
-                flex-direction: column; /* Asegura que la imagen esté arriba y el texto debajo en pantallas pequeñas */
+                flex-direction: column;
             }
         }
         /* Estilos para la flecha */
@@ -294,9 +298,9 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="./pages/venta.html">Venta</a></li>
                 <li><a href="./pages/alquilar.html">Alquilar</a></li>
-                <li><a href="./pages/promociones.html">Promociones</a></li>
+                <li><a href="./pages/noticias.html">Noticias</a></li>
                 <li><a href="./pages/">Empresa</a></li>
-                <li><a href="./pages/">Contacto</a></li>
+                <li><a href="./pages/contacto.html">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -304,11 +308,11 @@
     <!-- Sidenav -->
     <ul id="mobile-menu" class="sidenav">
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="venta.html">Venta</a></li>
+        <li><a href="./pages/venta.html">Venta</a></li>
         <li><a href="./pages/alquilar.html">Alquilar</a></li>
-        <li><a href="promociones.html">Promociones</a></li>
-        <li><a href="empresa.html">Empresa</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="./pages/noticias.html">Noticias</a></li>
+        <li><a href="./pages/">Empresa</a></li>
+        <li><a href="./pages/contacto.html">Contacto</a></li>
     </ul>
 
     <div class="background">

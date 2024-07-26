@@ -7,14 +7,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
-        /* Fondo oscuro para toda la página */
+       
         body {
             background-color: #333;
-            color: #fff; /* Color del texto en la página */
-            font-family: 'Roboto', sans-serif;
+            color: #fff; 
+        }
+        .contenido{
+            margin-top:10rem;
+        }
+        .header{
+            top: 0;
+            position: fixed; 
+            width: 100%;
+            z-index: 1000; 
+            color: beige;
         }
         .nav-wrapper {
-            background-color: #2196f3;
+            background-color: #333;
             padding-right: 20px; /* Espacio a la derecha */
         }
         .brand-logo {
@@ -45,6 +54,7 @@
             }
         }
         .container {
+            margin-bottom: 30px;
             margin-top: 20px;
         }
         .search-form {
@@ -83,10 +93,49 @@
         .contact-info .info-item p {
             margin: 0;
         }
+        .page-footer {
+    background-color: #222;
+    color: beige;
+    padding: 40px 0;
+}
+
+.page-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-footer h5 {
+    margin-bottom: 20px;
+}
+
+.page-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.page-footer ul li {
+    margin-bottom: 10px;
+}
+
+.page-footer ul a {
+    color: beige;
+    text-decoration: none;
+}
+
+.page-footer ul a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    background-color: #111;
+    padding: 10px 0;
+    text-align: center;
+}
     </style>
 </head>
 <body>
-    <nav>
+    <nav class="header">
         <div class="nav-wrapper">
             <a href="../index.html" class="brand-logo">G€striCredits</a>
             <a href="#" data-target="mobile-menu" class="sidenav-trigger">
@@ -96,7 +145,7 @@
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="venta.html">Venta</a></li>
                 <li><a href="alquilar.html">Alquilar</a></li>
-                <li><a href="promociones.html">Promociones</a></li>
+                <li><a href="noticias.html">Noticias</a></li>
                 <li><a href="empresa.html">Empresa</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
@@ -105,14 +154,14 @@
 
     <!-- Sidenav -->
     <ul id="mobile-menu" class="sidenav">
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="../index.html">Inicio</a></li>
         <li><a href="venta.html">Venta</a></li>
         <li><a href="alquilar.html">Alquilar</a></li>
-        <li><a href="promociones.html">Promociones</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
         <li><a href="empresa.html">Empresa</a></li>
         <li><a href="contacto.html">Contacto</a></li>
     </ul>
-
+    <div class="contenido">
     <div class="container" id="contacto">
         <h1>Contacto</h1>
         <p>Formulario de contacto.</p>
@@ -161,7 +210,41 @@
             </div>
         </div>
     </div>
-
+    
+            <!-- Pie de página -->
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="row">
+                        <!-- Números de teléfono -->
+                        <div class="col s12 m4">
+                            <h5 class="white-text">Contactos</h5>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="tel:+1234567890">Teléfono: ...</a></li>
+                                <li><a class="grey-text text-lighten-3" href="tel:+0987654321">Teléfono: ...</a></li>
+                            </ul>
+                        </div>
+                        <!-- Direcciones de correo electrónico -->
+                        <div class="col s12 m4">
+                            <h5 class="white-text">Correos Electrónicos</h5>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                                <li><a class="grey-text text-lighten-3" href="...">...</a></li>
+                            </ul>
+                        </div>
+                        <!-- Dirección física -->
+                        <div class="col s12 m4">
+                            <h5 class="white-text">Dirección</h5>
+                            <p class="grey-text text-lighten-3">29190, Calle ..., Ciudad, España</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container">
+                        © 2024 G€striCredits. Todos los derechos reservados.
+                    </div>
+                </div>
+            </footer>
+        </div>     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
