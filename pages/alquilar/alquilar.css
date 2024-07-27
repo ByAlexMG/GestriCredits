@@ -1,0 +1,165 @@
+body {
+    background-color: #333; /* Color de fondo añadido */
+}
+.contenido{
+    margin-top:10rem;
+}
+.header{
+    top: 0;
+    position: fixed; 
+    width: 100%;
+    z-index: 1000; 
+    color: beige;
+}
+.nav-wrapper {
+    background-color: #333;
+    padding-right: 20px; /* Espacio a la derecha */
+}
+.brand-logo {
+    margin-left: 10px;
+}
+.nav-wrapper .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: calc(100% - 40px); /* Asegura que haya margen en pantallas grandes */
+}
+.nav-wrapper ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.nav-wrapper ul li {
+    margin: 0 15px;
+}
+@media only screen and (max-width: 992px) {
+    .nav-wrapper ul {
+        display: none;
+    }
+    .sidenav {
+        width: 250px;
+    }
+}
+.container {
+    margin-top: 20px;
+    color: #fff; /* Asegura que el texto sea visible sobre el fondo oscuro */
+}
+.card-image img {
+    height: 200px;
+    object-fit: cover;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.modal-content {
+    overflow-y: auto;
+}
+.carousel .carousel-item img {
+    width: 100%;
+height: 100%; /* Asegura que la imagen cubra todo el contenedor */
+object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+}
+.carousel.carousel-slider {
+    height: 300px; /* Ajustar la altura según sea necesario */
+    overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+}
+.carousel-fixed-item {
+    display: none;
+}
+.search-form {
+    margin-bottom: 30px;
+}
+.card-title {
+    font-weight: 700; /* Ajusta el grosor del texto aquí */
+}
+#nombre{
+    color: #ffffff;
+    font-weight: bold;
+}
+.search-form input {
+    margin-bottom: 10px;
+}
+.search-form .input-field {
+    margin: 0;
+}
+.search-form .btn {
+    margin-right: 10px; /* Espacio entre los botones */
+}
+.reset-button {
+    background-color: red;
+    color: white;
+}
+.card-content{
+    color: black;
+}
+
+.page-footer {
+    background-color: #222;
+    color: beige;
+    padding: 40px 0;
+}
+
+.page-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-footer h5 {
+    margin-bottom: 20px;
+}
+
+.page-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.page-footer ul li {
+    margin-bottom: 10px;
+}
+
+.page-footer ul a {
+    color: beige;
+    text-decoration: none;
+}
+
+.page-footer ul a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    background-color: #111;
+    padding: 10px 0;
+    text-align: center;
+}
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* Color verde característico de WhatsApp */
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+.carousel .carousel-item {
+display: flex;
+justify-content: center;
+align-items: center;
+}
