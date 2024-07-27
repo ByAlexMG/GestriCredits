@@ -31,8 +31,11 @@ function openModal(modalId) {
         var instance = M.Modal.getInstance(modalElem);
         if (instance) {
             instance.open();
+            // Re-inicializar el carrusel cuando se abre el modal
+            M.Carousel.init(modalElem.querySelectorAll('.carousel'), { fullWidth: true });
         } else {
             M.Modal.init(modalElem).open();
+            M.Carousel.init(modalElem.querySelectorAll('.carousel'), { fullWidth: true });
         }
     } else {
         console.error('Modal with ID ' + modalId + ' does not exist.');

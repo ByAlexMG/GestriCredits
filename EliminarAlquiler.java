@@ -46,7 +46,7 @@ public class EliminarAlquiler {
         }
 
         try {
-            Path path = Paths.get("pages\\alquilar.html"); // Replace with the path to your HTML file
+            Path path = Paths.get("pages\\alquilar\\alquilar.html"); // Replace with the path to your HTML file
             String content = new String(Files.readAllBytes(path));
 
             // Updated regular expression
