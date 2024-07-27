@@ -122,7 +122,7 @@ public class PublicarNoticia {
                     newContent.append("                <p>").append(briefDescription).append("</p>\n");
                     newContent.append("            </div>\n");
                     newContent.append("            <div class=\"card-action\">\n");
-                    newContent.append("                <a class=\"modal-trigger\" href=\"#modal").append(title.hashCode()).append("\">Leer más</a>\n");
+                    newContent.append("                <a class=\"modal-trigger\" href=\"#modal").append(title.hashCode()).append("\">Leer m&aacutes</a>\n");
                     newContent.append("            </div>\n");
                     newContent.append("        </div>\n");
                     newContent.append("    </div>\n");
@@ -136,6 +136,7 @@ public class PublicarNoticia {
                     newContent.append("        <a href=\"#!\" class=\"modal-close waves-effect waves-green btn-flat\">Cerrar</a>\n");
                     newContent.append("    </div>\n");
                     newContent.append("</div>\n");
+                    newContent.append("<!-- FIN -->");
 
                     inserted = true;
                 }
