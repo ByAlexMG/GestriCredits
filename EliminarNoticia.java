@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 
 public class EliminarNoticia extends JFrame {
-    private JTextField tituloField;
+    private JTextField palabraClaveField;
     private JButton eliminarButton;
     private JTextArea statusArea;
 
@@ -19,13 +19,13 @@ public class EliminarNoticia extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(3, 1));
 
-        tituloField = new JTextField();
+        palabraClaveField = new JTextField();
         eliminarButton = new JButton("Eliminar Noticia");
         statusArea = new JTextArea();
         statusArea.setEditable(false);
 
         panel.add(new JLabel("Palabra clave de la Noticia:"));
-        panel.add(tituloField);
+        panel.add(palabraClaveField);
         panel.add(eliminarButton);
 
         add(panel, BorderLayout.NORTH);
@@ -34,12 +34,12 @@ public class EliminarNoticia extends JFrame {
         eliminarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String titulo = tituloField.getText();
-                if (titulo.isEmpty()) {
+                String palabraClave = palabraClaveField.getText();
+                if (palabraClave.isEmpty()) {
                     statusArea.setText("Por favor, ingresa una palabra clave.");
                 } else {
                     try {
-                        eliminarNoticia(titulo);
+                        eliminarNoticia(palabraClave);
                         statusArea.setText("Noticia eliminada exitosamente.");
                     } catch (IOException ex) {
                         statusArea.setText("Error al eliminar la noticia: " + ex.getMessage());
@@ -50,31 +50,31 @@ public class EliminarNoticia extends JFrame {
     }
 
     private void eliminarNoticia(String palabraClave) throws IOException {
-        File inputFile = new File("pages\\noticias.html");
+        File inputFile = new File("pages\\venta.html");
         StringBuilder inputBuffer = new StringBuilder();
 
         BufferedReader reader = new BufferedReader(new FileReader(inputFile));
 
         String line;
-        boolean skip = false;
+        boolean dentroDelBloque = false;
+        StringBuilder bloqueActual = new StringBuilder();
 
         while ((line = reader.readLine()) != null) {
             if (line.contains("<!-- INSERTAR AQUI -->")) {
-                StringBuilder block = new StringBuilder();
-                block.append(line).append("\n");
-                while ((line = reader.readLine()) != null && !line.contains("<!-- FIN -->")) {
-                    block.append(line).append("\n");
+                dentroDelBloque = true;
+                bloqueActual.setLength(0); // Limpiar el bloque actual
+            }
+
+            if (dentroDelBloque) {
+                bloqueActual.append(line).append("\n");
+                if (line.contains("<!-- FIN -->")) {
+                    dentroDelBloque = false;
+                    if (!bloqueActual.toString().contains(palabraClave)) {
+                        inputBuffer.append(bloqueActual.toString());
+                    }
                 }
-                block.append(line).append("\n");
-                if (block.toString().contains(palabraClave)) {
-                    skip = true;
-                } else {
-                    inputBuffer.append(block.toString());
-                }
-            } else if (!skip) {
+            } else {
                 inputBuffer.append(line).append("\n");
-            } else if (line.contains("<!-- FIN -->")) {
-                skip = false;
             }
         }
 
