@@ -136,7 +136,7 @@ public class PublicarNoticia {
                     newContent.append("        <a href=\"#!\" class=\"modal-close waves-effect waves-green btn-flat\">Cerrar</a>\n");
                     newContent.append("    </div>\n");
                     newContent.append("</div>\n");
-                    newContent.append("<!-- FIN -->");
+                    newContent.append("<!-- FIN -->\n");
 
                     inserted = true;
                 }
