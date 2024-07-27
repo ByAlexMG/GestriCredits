@@ -4,305 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>G€striCredits</title>
+    <link rel="icon" href="drawable\images\logo.PNG" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style>
-        .nav-wrapper {
-            background-color: #333;
-            padding-right: 20px;
-            color: beige;
-            
-        }
-        .header{
-            top: 0;
-            position: fixed; 
-            width: 100%;
-            z-index: 1000; 
-            color: beige;
-        }
-        .brand-logo {
-            margin-left: 10px;
-            color: beige;
-        }
-        .background {
-    background-image: url('./drawable/images/croquetas.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: beige;
-    text-align: center;
-    padding: 20px;
-    position: relative;
-}
-        .nav-wrapper .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            max-width: calc(100% - 40px);
-        }
-        .nav-wrapper ul {
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
-        .nav-wrapper ul li {
-            margin: 0 15px;
-        }
-        @media only screen and (max-width: 992px) {
-            .background {
-        background-attachment: scroll;
-    }
-            .nav-wrapper ul {
-                display: none;
-            }
-            .sidenav {
-                width: 250px;
-            }
-        }
-        .fullscreen-bg {
-            background-size: cover;
-            height: 100vh;
-            position: relative;
-        }
-        .content {
-            background-color: #333;
-            margin-top: 5rem;
-        }
-        .top-ventas-title {
-            font-weight: bold;
-            color: beige;
-            text-align: center;
-        }
-        .top-alquiler-title {
-            font-weight: bold;
-            color: beige;
-            text-align: center;
-            margin-top: -2rem;
-        }
-        .carousel .carousel-item {
-            width: 400px;
-        }
-        .carousel-item {
-            position: relative;
-            height: 300px; /* Ajusta la altura según tus necesidades */
-        }
-        .carousel-item-content {
-            position: relative;
-            height: 100%;
-            display: flex;
-            align-items: flex-end;
-            overflow: hidden;
-        }
-        .carousel-item-image {
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 100%;
-        }
-        .carousel-item-overlay {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to left, rgba(0, 0, 0, 0.719)90%, rgba(255, 255, 255, 0) 100%);
-            z-index: 1;
-        }
-        .carousel-item-info {
-            position: absolute;
-            left: 0;
-            right: 50%;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: left; /* Alinea el texto a la izquierda */
-            z-index: 2; /* Asegúrate de que el texto esté por encima del filtro */
-        }
-        .carousel-item-info h6 {
-            margin: 0;
-            font-size: 1rem; /* Ajusta el tamaño de la fuente según tu preferencia */
-        }
-        .carousel {
-            margin-top: -5rem;
-        }
-        .card-image img {
-            height: 200px;
-        }
-        .card-content {
-            display: flex;
-            align-items: center;
-        }
-        .card-content img {
-            margin-right: 15px;
-        }
-        .card-image {
-            width: 100%;
-        }
-        body {
-            background-color: #333;
-        }
-        .texto-bienvenida{
-            color: beige;
-            text-align: center;
-            margin-top: -7rem;
-        }
-        .texto-bienvenida h1 {
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.589); /* Sombra del texto */
-        }
-        
-        .texto-bienvenida p {
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.671); /* Sombra del texto */
-        }
-        .detalles{
-            padding: 2px;
-        }
-
-        .top-alquiler-title {
-    font-weight: bold;
-    color: beige;
-    text-align: center;
-   /* Añade un margen superior para separar del carrusel */
-}
-
-.noticias-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Crea una cuadrícula de 2 columnas */
-    gap: 20px; /* Espacio entre los elementos de la cuadrícula */
-    margin-bottom: 2rem;
-}
-
-.noticia {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Espacio entre la imagen y el texto */
-    background-color: #444;
-    padding: 15px;
-    border-radius: 5px;
-    height: 100%; /* Asegura que cada tarjeta ocupe toda la altura disponible */
-}
-
-.noticia img {
-    width: 150px; /* Ajusta el tamaño de la imagen según tus necesidades */
-    height: 100px; /* Ajusta la altura de la imagen según tus necesidades */
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.noticia-texto {
-    color: beige;
-}
-
-.noticia-texto h5 {
-    margin: 0;
-    font-size: 1.2rem; /* Ajusta el tamaño del título */
-}
-
-.noticia-texto p {
-    margin: 5px 0 0;
-    font-size: 1rem; /* Ajusta el tamaño de la descripción */
-}
-.page-footer {
-    background-color: #222;
-    color: beige;
-    padding: 40px 0;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-}
-.page-footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.page-footer h5 {
-    margin-bottom: 20px;
-}
-
-.page-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-.page-footer ul li {
-    margin-bottom: 10px;
-}
-
-.page-footer ul a {
-    color: beige;
-    text-decoration: none;
-}
-
-.page-footer ul a:hover {
-    text-decoration: underline;
-}
-
-.footer-copyright {
-    background-color: #111;
-    padding: 10px 0;
-    text-align: center;
-    width: 100%;
-    position: relative;
-}
-@media only screen and (max-width: 1200px) {
-            .noticias-grid {
-                grid-template-columns: 1fr;
-            }
-            .noticia {
-                flex-direction: column;
-            }
-        }
-        /* Estilos para la flecha */
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            cursor: pointer;
-            font-size: 2rem;
-            color: beige;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-20px);
-            }
-            60% {
-                transform: translateY(-10px);
-            }
-        }
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366; /* Color verde característico de WhatsApp */
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            font-size: 30px;
-            cursor: pointer;
-            z-index: 1000;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
+  
 </head>
 <body>
     <nav class="header">
@@ -313,8 +19,8 @@
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="./pages/venta/ventas.html">Venta</a></li>
-                <li><a href="./pages/alquilar/alquilar.html">Alquilar</a></li>
+                <li><a href="./pages/venta/ventas.html">Ventas</a></li>
+                <li><a href="./pages/alquilar/alquilar.html">Alquilares</a></li>
                 <li><a href="./pages/noticias/noticias.html">Noticias</a></li>
                 <li><a href="./pages/sobreNosotros/sobreNosotros.html">Sobre Nosotros</a></li>
                 <li><a href="./pages/contacto/contacto.html">Contacto</a></li>
@@ -322,11 +28,11 @@
         </div>
     </nav>
 
-    <!-- Sidenav -->
+    
     <ul id="mobile-menu" class="sidenav">
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="./pages/venta/ventas.html">Venta</a></li>
-        <li><a href="./pages/alquilar/alquilar.html">Alquilar</a></li>
+        <li><a href="./pages/venta/ventas.html">Ventas</a></li>
+        <li><a href="./pages/alquilar/alquilar.html">Alquilares</a></li>
         <li><a href="./pages/noticias/noticias.html">Noticias</a></li>
         <li><a href="./pages/sobreNosotros/sobreNosotros.html">Sobre Nosotros</a></li>
         <li><a href="./pages/contacto/contacto.html">Contacto</a></li>
@@ -554,11 +260,11 @@
                 </div>
             </div>
         </div>
-        <!-- Pie de página -->
+        
 <footer class="page-footer">
     <div class="container">
         <div class="row">
-            <!-- Números de teléfono -->
+            
             <div class="col s12 m4">
                 <h5 class="white-text">Contactos</h5>
                 <ul>
@@ -566,7 +272,7 @@
                     <li><a class="grey-text text-lighten-3" href="tel:+0987654321">Teléfono: ...</a></li>
                 </ul>
             </div>
-            <!-- Direcciones de correo electrónico -->
+            
             <div class="col s12 m4">
                 <h5 class="white-text">Correos Electrónicos</h5>
                 <ul>
@@ -574,7 +280,7 @@
                     <li><a class="grey-text text-lighten-3" href="...">...</a></li>
                 </ul>
             </div>
-            <!-- Dirección física -->
+            
             <div class="col s12 m4">
                 <h5 class="white-text">Dirección</h5>
                 <p class="grey-text text-lighten-3">29190, Calle ..., Ciudad, España</p>
@@ -587,45 +293,15 @@
         </div>
     </div>
 </footer>
-<a href="https://wa.me/661681898?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20que%20me%20informase%20sobre%20sus%20servicios." class="whatsapp-button" target="_blank">
+<a href="https://wa.me/680135267?text=Hola%2C%20he%20visitado%20vuestra%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20que%20me%20informase%20sobre%20sus%20servicios." class="whatsapp-button" target="_blank">
     <i class="material-icons">chat</i>
 </a>
         
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializa el menú de navegación móvil
-            var elemsSidenav = document.querySelectorAll('.sidenav');
-            M.Sidenav.init(elemsSidenav, {});
-            
-            // Inicializa los carruseles
-            var elemsCarousel = document.querySelectorAll('.carousel');
-            var carousels = M.Carousel.init(elemsCarousel, {
-                duration: 200,
-                dist: -80,
-                shift: 5,
-                padding: 5,
-                numVisible: 6,
-                indicators: false
-            });
-            
-            
-            setInterval(function() {
-                carousels.forEach(function(instance) {
-                    instance.next();
-                });
-            }, 3500); 
-        });
-    
-        function scrollDown() {
-            window.scrollTo({
-                top: window.innerHeight,
-                behavior: 'smooth'
-            });
-        }
-    </script>
+    <script src="index.js"></script>
+  
     
 </body>
 </html>
