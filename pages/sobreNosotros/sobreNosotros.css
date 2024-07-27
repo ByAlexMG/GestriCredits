@@ -1,0 +1,145 @@
+body {
+    background-color: #333;
+    color: #fff;
+}
+.contenido {
+    margin-top: 8rem;
+}
+.header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    color: beige;
+}
+.nav-wrapper {
+    background-color: #333;
+    padding-right: 20px;
+}
+.brand-logo {
+    margin-left: 10px;
+}
+.nav-wrapper .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: calc(100% - 40px);
+}
+.nav-wrapper ul {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.nav-wrapper ul li {
+    margin: 0 15px;
+}
+@media only screen and (max-width: 992px) {
+    .nav-wrapper ul {
+        display: none;
+    }
+    .sidenav {
+        width: 250px;
+    }
+}
+.container {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.page-footer {
+    background-color: #222;
+    color: beige;
+    padding: 40px 0;
+}
+.page-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.page-footer h5 {
+    margin-bottom: 20px;
+}
+.page-footer ul {
+    list-style: none;
+    padding: 0;
+}
+.page-footer ul li {
+    margin-bottom: 10px;
+}
+.page-footer ul a {
+    color: beige;
+    text-decoration: none;
+}
+.page-footer ul a:hover {
+    text-decoration: underline;
+}
+.footer-copyright {
+    background-color: #111;
+    padding: 10px 0;
+    text-align: center;
+}
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+.carousel {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    position: relative; /* Necesario para posicionar las flechas correctamente */
+}
+.carousel-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.carousel-navigation .btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+.carousel-navigation .btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+.section-title {
+    margin-top: 2rem;
+    text-align: center;
+    color: #fff;
+}
+.section-title h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.section-description {
+    margin-top: 1rem;
+    text-align: center;
+    color: #ddd;
+}
+.section-description p {
+    font-size: 1.2rem;
+}

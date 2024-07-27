@@ -50,7 +50,7 @@ public class EliminarNoticia extends JFrame {
     }
 
     private void eliminarNoticia(String palabraClave) throws IOException {
-        File inputFile = new File("pages\\noticias.html");
+        File inputFile = new File("pages\\noticias\\noticias.html");
         StringBuilder inputBuffer = new StringBuilder();
 
         BufferedReader reader = new BufferedReader(new FileReader(inputFile));

@@ -158,7 +158,7 @@ public class PublicarVentas {
                         propertyImageFileName = new File(propertyImagePath).getName();
                     }
                     try {
-                        copyImageToDirectory(propertyImagePath, "../drawable/images/" + propertyImageFileName);
+                        copyImageToDirectory(propertyImagePath, "../../drawable/images/" + propertyImageFileName);
                     } catch (IOException ioException) {
                         ioException.printStackTrace();
                         JOptionPane.showMessageDialog(frame, "Error al guardar la imagen de la propiedad.");
@@ -175,14 +175,14 @@ public class PublicarVentas {
                         String modalImageFileName = new File(path).getName();
                         modalImageFileNames.add(modalImageFileName);
                         try {
-                            copyImageToDirectory(path, "../drawable/images/" + modalImageFileName);
+                            copyImageToDirectory(path, "../../drawable/images/" + modalImageFileName);
                         } catch (IOException ioException) {
                             ioException.printStackTrace();
                             JOptionPane.showMessageDialog(frame, "Error al guardar la imagen del modal: " + modalImageFileName);
                             return;
                         }
                     }
-                    updateHTML(location, price, description, "../drawable/images/" + propertyImageFileName, modalImageFileNames, title, modalTitle, modalContent);
+                    updateHTML(location, price, description, "../../drawable/images/" + propertyImageFileName, modalImageFileNames, title, modalTitle, modalContent);
                     JOptionPane.showMessageDialog(frame, "Propiedad Publicada.");
                 } else {
                     JOptionPane.showMessageDialog(frame, "Selecciona al menos una imagen para el modal.");
@@ -209,7 +209,7 @@ public class PublicarVentas {
     }
 
     public void updateHTML(String location, String price, String description, String propertyImagePath, List<String> modalImageFileNames, String title, String modalTitle, String modalContent) {
-        String filePath = "pages\\venta.html"; // Reemplaza con la ruta real del archivo HTML
+        String filePath = "pages\\venta\\ventas.html"; // Reemplaza con la ruta real del archivo HTML
         StringBuilder htmlContent = new StringBuilder();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
@@ -242,7 +242,7 @@ public class PublicarVentas {
         StringBuilder carouselHTML = new StringBuilder();
         for (int i = 0; i < modalImageFileNames.size(); i++) {
             String modalImageFileName = modalImageFileNames.get(i);
-            carouselHTML.append("            <a class='carousel-item' href='#!'><img src='../drawable/images/").append(modalImageFileName).append("' alt='Imagen ").append(i + 1).append("'></a>\n");
+            carouselHTML.append("            <a class='carousel-item' href='#!'><img src='../../drawable/images/").append(modalImageFileName).append("' alt='Imagen ").append(i + 1).append("'></a>\n");
         }
 
         String newModalHTML =

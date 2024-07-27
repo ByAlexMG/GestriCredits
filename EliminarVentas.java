@@ -46,7 +46,7 @@ public class EliminarVentas {
         }
 
         try {
-            Path path = Paths.get("pages\\venta.html"); // Replace with the path to your HTML file
+            Path path = Paths.get("pages\\venta\\ventas.html"); // Replace with the path to your HTML file
             String content = new String(Files.readAllBytes(path));
 
             // Updated regular expression

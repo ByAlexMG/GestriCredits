@@ -6,7 +6,7 @@
     <title>G€striCredits</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="alquilar.css">
+    <link rel="stylesheet" href="ventas.css"> 
 </head>
 <body>
     <nav class="header">
@@ -26,20 +26,21 @@
         </div>
     </nav>
 
+    
     <ul id="mobile-menu" class="sidenav">
-        <li><a href="../../index.html">Inicio</a></li>
-        <li><a href="../venta/ventas.html">Venta</a></li>
-        <li><a href="../alquilar/alquilar.html">Alquiler</a></li>
-        <li><a href="../noticias/noticias.html">Noticias</a></li>
-        <li><a href="../sobreNosotros/sobreNosotros.html">Sobre Nosotros</a></li>
-        <li><a href="../contacto/contacto.html">Contacto</a></li>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="../venta/ventas.html">Venta</a></li>
+                <li><a href="../alquilar/alquilar.html">Alquiler</a></li>
+                <li><a href="../noticias/noticias.html">Noticias</a></li>
+                <li><a href="../sobreNosotros/sobreNosotros.html">Sobre Nosotros</a></li>
+                <li><a href="../contacto/contacto.html">Contacto</a></li>
     </ul>
 
     <div class="contenido">
         <div class="container" id="propiedades">
-            <h1>Propiedades en Alquiler</h1>
+            <h1>Propiedades en Venta</h1>
             
-            
+           
             <div class="search-form">
                 <form id="search-form">
                     <div class="row">
@@ -112,6 +113,20 @@
 
                 
 
+<div class='col s12 m6 card-item' data-ubicacion='prueba' data-precio='prueba'>
+    <div class='card' onclick='openModal(22)'>
+        <div class='card-image'>
+            <img src='../../drawable/images/croquetas.jpg' alt='Imagen de la Propiedad'>
+            <span class='card-title' id="nombre">prueba</span>
+        </div>
+        <div class='card-content'>
+            <p>Ubicaci&oacuten: prueba</p>
+            <p>Precio: prueba&euro;</p>
+            <p>Descripci&oacuten: prueba</p>
+        </div>
+    </div>
+</div>
+
 <!-- INSERTAR AQUI -->
 
             </div>
@@ -119,7 +134,39 @@
     </div>
 
     
+<div id='modal22' class='modal'>
+    <div class='modal-content'>
+        <h4>prueba</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#!'><img src='../../drawable/images/croquetas.jpg' alt='Imagen 1'></a>
+            <a class='carousel-item' href='#!'><img src='../../drawable/images/croquetas2.jpg' alt='Imagen 2'></a>
+        </div>
+        <p>Ubicaci&oacuten: prueba</p>
+        <p>Precio: prueba&euro;</p>
+        <p>Descripci&oacuten: pruebapruebapruebapruebaprueba</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
+<div id='modal23' class='modal'>
+    <div class='modal-content'>
+        <h4>cositas</h4>
+        <div class='carousel carousel-slider'>
+            <a class='carousel-item' href='#!'><img src='../../drawable/images/croquetas.jpg' alt='Imagen 1'></a>
+            <a class='carousel-item' href='#!'><img src='../../drawable/images/croquetas2.jpg' alt='Imagen 2'></a>
+        </div>
+        <p>Ubicaci&oacuten: cositas</p>
+        <p>Precio: cositas&euro;</p>
+        <p>Descripci&oacuten: cositascositascositascositas</p>
+    </div>
+    <div class='modal-footer'>
+        <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cerrar</a>
+    </div>
+</div>
+
 <!-- INSERTAR MODALES AQUI -->
+
 <div id="modal2" class="modal">
     <div class="modal-content">
         <h4>Propiedad 1</h4>
@@ -177,6 +224,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="alguilar.js"></script> 
+    <script src="ventas.js"></script> 
 </body>
 </html>

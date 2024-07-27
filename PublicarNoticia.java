@@ -68,7 +68,7 @@ public class PublicarNoticia {
                         try {
                             // Copiar la imagen seleccionada al directorio de recursos
                             File sourceFile = new File(imagePath);
-                            File destinationFile = new File("../drawable/images/" + sourceFile.getName());
+                            File destinationFile = new File("../../drawable/images/" + sourceFile.getName());
                             try (InputStream in = new FileInputStream(sourceFile);
                                  OutputStream out = new FileOutputStream(destinationFile)) {
                                 byte[] buffer = new byte[1024];
@@ -98,7 +98,7 @@ public class PublicarNoticia {
     }
 
     private static void appendNewsToFile(String title, String briefDescription, String modalDescription, String imageFileName) throws IOException {
-        String filePath = "pages\\noticias.html";
+        String filePath = "pages\\noticias\\noticias.html";
 
         // Leer el archivo HTML y crear el nuevo contenido con la noticia
         StringBuilder newContent = new StringBuilder();
@@ -114,7 +114,7 @@ public class PublicarNoticia {
                     newContent.append("<div class=\"col s12 m6\">\n");
                     newContent.append("    <div class=\"card horizontal\">\n");
                     newContent.append("        <div class=\"card-image\">\n");
-                    newContent.append("            <img src=\"../drawable/images/").append(imageFileName).append("\" alt=\"").append(title).append("\">\n");
+                    newContent.append("            <img src=\"../../drawable/images/").append(imageFileName).append("\" alt=\"").append(title).append("\">\n");
                     newContent.append("        </div>\n");
                     newContent.append("        <div class=\"card-stacked\">\n");
                     newContent.append("            <div class=\"card-content\">\n");
