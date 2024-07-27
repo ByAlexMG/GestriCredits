@@ -57,19 +57,24 @@ public class EliminarNoticia extends JFrame {
 
         String line;
         boolean dentroDelBloque = false;
+        boolean eliminarBloque = false;
         StringBuilder bloqueActual = new StringBuilder();
 
         while ((line = reader.readLine()) != null) {
-            if (line.contains("<!-- INSERTAR AQUI -->")) {
+            if (line.contains("<div class=\"col s12 m6\">")) {
                 dentroDelBloque = true;
-                bloqueActual.setLength(0); // Limpiar el bloque actual
+                eliminarBloque = false;
+                bloqueActual.setLength(0); // Clear the current block
             }
 
             if (dentroDelBloque) {
-                bloqueActual.append(line).append("\n");c
+                bloqueActual.append(line).append("\n");
+                if (line.contains(palabraClave)) {
+                    eliminarBloque = true;
+                }
                 if (line.contains("<!-- FIN -->")) {
                     dentroDelBloque = false;
-                    if (!bloqueActual.toString().contains(palabraClave)) {
+                    if (!eliminarBloque) {
                         inputBuffer.append(bloqueActual.toString());
                     }
                 }
