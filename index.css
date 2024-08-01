@@ -16,7 +16,7 @@
     color: beige;
 }
 .background {
-background-image: url('./drawable/images/croquetas.jpg');
+background-image: url('./drawable/images/Fondo.PNG');
 background-attachment: fixed;
 background-size: cover;
 background-position: center;
@@ -85,8 +85,10 @@ background-attachment: scroll;
 }
 .carousel-item-content {
     position: relative;
+    width: 450px;
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
     overflow: hidden;
 }
@@ -101,6 +103,8 @@ background-attachment: scroll;
     top: 0;
     left: 50%;
     right: 0;
+    display: flex;
+    flex-direction: column;
     bottom: 0;
     background: linear-gradient(to left, rgba(0, 0, 0, 0.719)90%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
@@ -112,6 +116,12 @@ background-attachment: scroll;
     top: 50%;
     transform: translateY(-50%);
     color: white;
+    display: flex;
+    flex-direction: row; /* Asegura que los h6 se dispongan en columna */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas si es necesario */
+    align-items: center; /* Alinea los elementos en el centro verticalmente */
+    gap: 10px; /* Espacio entre los elementos */
+    justify-content: space-between; /* Espacio entre los elementos */
     padding: 20px;
     box-sizing: border-box;
     text-align: left; /* Alinea el texto a la izquierda */
@@ -153,9 +163,12 @@ body {
 .texto-bienvenida p {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.671); /* Sombra del texto */
 }
-.detalles{
-    padding: 2px;
+.detalles {
+    display: inline-block; /* Asegura que el contenido esté en línea */
+    white-space: nowrap; /* Previene el salto de línea dentro del contenido */
+    margin: 15px; /* Espaciado vertical entre los h6 */
 }
+
 
 .top-alquiler-title {
 font-weight: bold;
