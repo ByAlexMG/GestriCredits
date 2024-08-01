@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var elemsCarousel = document.querySelectorAll('.carousel');
     var carousels = M.Carousel.init(elemsCarousel, {
         duration: 200,
-        dist: -80,
+        dist: -100,
         shift: 5,
         padding: 5,
         numVisible: 6,
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         carousels.forEach(function(instance) {
             instance.next();
         });
-    }, 3500);
+    }, 5000);
 });
 
 function scrollDown() {
